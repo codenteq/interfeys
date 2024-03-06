@@ -5,17 +5,23 @@ on:
     branches:
       - master
 
-
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "20"
-      - run: npm install
-      - run: npm run build
-      - uses: JS-DevTools/npm-publish@v3
-        with:
-          token: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Package
+        run: npm run build
+
+      - name: Publish Package
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: |
+          npm publish --access public
+          npm config set '//registry.npmjs.org/:_authToken' "${NPM_AUTH_TOKEN}"

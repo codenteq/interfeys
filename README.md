@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center"><img src="https://codenteq.com/wp-content/uploads/2022/11/web-logo.webp" width="200" alt="İnterfeys Design System Logo" /></p>
+
+<h1 align="center">Interfeys Design System</h1>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/@codenteq/interfeys">
+    <img src="https://img.shields.io/npm/v/@codenteq/interfeys.svg" alt="NPM Package Stable" />
+  </a>
+  <a href="https://github.com/codenteq/interfeys/blob/next/LICENSE">
+    <img src="https://img.shields.io/github/license/codenteq/interfeys" alt="License" />
+  </a>
+  <a href="https://www.jsdelivr.com/package/npm/@codenteq/interfeys">
+    <img src="https://img.shields.io/jsdelivr/npm/hm/@codenteq/interfeys" alt="jsDelivr hits" />
+  </a>
+  <a href="https://github.com/semantic-release/semantic-release">
+    <img src="https://img.shields.io/badge/semantic--release-react-e10079?logo=semantic-release" alt="semantic-release: angular" />
+  </a>
+</p>
+
+Interfeys is a design system provided by [Codenteq](https://github.com/codenteq) to create a consistent UI/UX for app users.
+
+Web implementation of the design system is created as native web components so it can be used within every type of web frameworks including React. Our target is providing a UI library that has neatly designed and developed for providing best possible user experience for the users of applications that uses Interfeys DS.
 
 ## Getting Started
 
-First, run the development server:
+First, install the package:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm i @codenteq/interfeys
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```typescript
+<Button
+  type={'button'}
+  label={'Interfeys works!'}
+/>
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How to contribute
+Interfeys Design System is always open for direct contributions. Contributions can be in the form of design suggestions, documentation improvements, new component suggestions, code improvements, adding new features or fixing problems. For more information please check our [Contribution Guideline document.](https://github.com/codenteq/interfeys/blob/next/CONTRIBUTING.md)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Useful Links
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* [Storybook Documentation](https://codenteq.com/)

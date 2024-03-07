@@ -1,6 +1,6 @@
 {
   "name": "@codenteq/interfeys",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Interfeys is a design system provided by Codenteq to create a consistent UI/UX for app users.",
   "main": "src/index.ts",
   "type": "commonjs",

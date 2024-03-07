@@ -1,13 +1,24 @@
 {
   "name": "@codenteq/interfeys",
-  "version": "0.2.1",
-  "description": "Interfeys is a design system provided by Codenteq to create a consistent UI/UX for app users.",
+  "version": "0.2.2",
+  "description": "Codenteq Interfeys Design System",
   "main": "src/index.ts",
+  "module": "src/index.ts",
   "type": "commonjs",
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://interfeys.codenteq.com",
   "repository": "github:codenteq/interfeys",
+  "bugs": {
+    "url": "https://github.com/codenteq/interfeys/issues"
+  },
+  "author": "Ahmet Sefa Arşiv <ahmetarsivpm@gmail.com> (https://github.com/ahmetarsiv), Ali Karabay <alikarabaypm@gmail.com> (https://github.com/karabayyazilim)",
+  "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
+    "build": "vite build",
     "build-storybook": "storybook build"
   },
   "keywords": [
@@ -15,8 +26,6 @@
     "typescript",
     "lit"
   ],
-  "author": "Ahmet Sefa Arşiv <ahmetarsivpm@gmail.com> (https://github.com/ahmetarsiv), Ali Karabay <alikarabaypm@gmail.com> (https://github.com/karabayyazilim)",
-  "license": "MIT",
   "devDependencies": {
     "@storybook/addon-actions": "^7.6.17",
     "@storybook/addon-essentials": "^7.6.17",

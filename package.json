@@ -1,6 +1,6 @@
 {
   "name": "@codenteq/interfeys",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "description": "Codenteq Interfeys Design System",
   "main": "src/index.ts",
   "module": "src/index.ts",

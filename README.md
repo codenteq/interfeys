@@ -41,4 +41,4 @@ Interfeys Design System is always open for direct contributions. Contributions c
 
 ## Useful Links
 
-* [Storybook Documentation](https://codenteq.com/)
+* [Storybook Documentation](https://interfeys.codenteq.com/)

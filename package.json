@@ -1,6 +1,6 @@
 {
   "name": "@codenteq/interfeys",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Interfeys is a design system provided by Codenteq to create a consistent UI/UX for app users.",
   "author": "Ahmet Sefa Arşiv <ahmetarsivpm@gmail.com> (https://github.com/ahmetarsiv), Ali Karabay <alikarabaypm@gmail.com> (https://github.com/karabayyazilim)",
   "publishConfig": {

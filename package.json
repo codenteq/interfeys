@@ -1,28 +1,22 @@
 {
   "name": "@codenteq/interfeys",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Interfeys is a design system provided by Codenteq to create a consistent UI/UX for app users.",
-  "author": "Ahmet Sefa Arşiv <ahmetarsivpm@gmail.com> (https://github.com/ahmetarsiv), Ali Karabay <alikarabaypm@gmail.com> (https://github.com/karabayyazilim)",
-  "publishConfig": {
-    "access": "public"
-  },
+  "main": "src/index.ts",
+  "type": "commonjs",
+  "repository": "github:codenteq/interfeys",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "dependencies": {
-    "@tailwindcss/forms": "^0.5.7",
-    "framer-motion": "^11.0.8",
-    "next": "14.1.2",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-table": "^7.8.0",
-    "swiper": "^11.0.7"
-  },
+  "keywords": [
+    "web-components",
+    "typescript",
+    "lit"
+  ],
+  "author": "Ahmet Sefa Arşiv <ahmetarsivpm@gmail.com> (https://github.com/ahmetarsiv), Ali Karabay <alikarabaypm@gmail.com> (https://github.com/karabayyazilim)",
+  "license": "MIT",
   "devDependencies": {
     "@storybook/addon-actions": "^7.6.17",
     "@storybook/addon-essentials": "^7.6.17",
@@ -31,21 +25,22 @@
     "@storybook/addon-links": "^7.6.17",
     "@storybook/addon-onboarding": "^1.0.11",
     "@storybook/blocks": "^7.6.17",
-    "@storybook/nextjs": "^7.6.17",
     "@storybook/react": "^7.6.17",
+    "@storybook/react-vite": "^7.6.17",
     "@storybook/test": "^7.6.17",
-    "@storybook/test-runner": "^0.16.0",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
     "@types/react-table": "^7.7.19",
-    "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.2",
-    "eslint-plugin-storybook": "^0.8.0",
-    "postcss": "^8",
+    "postcss": "^8.4.35",
+    "react-dom": "^18.2.0",
     "storybook": "^7.6.17",
-    "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.4.2",
+    "vite": "^5.1.5"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "framer-motion": "^11.0.8",
+    "react": "^18.2.0",
+    "react-table": "^7.8.0",
+    "swiper": "^11.0.7"
   }
 }

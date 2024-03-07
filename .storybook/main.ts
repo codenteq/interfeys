@@ -1,10 +1,12 @@
-import type { StorybookConfig } from "@storybook/nextjs";
+import type { StorybookConfig } from "@storybook/react-vite";
+
+export const title = 'Interfeys Design System';
 
 const config: StorybookConfig = {
   stories: [
     "../stories/**/*.mdx",
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    "../app/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: [
     "@storybook/addon-links",
@@ -15,7 +17,7 @@ const config: StorybookConfig = {
     "@storybook/addon-knobs"
   ],
   framework: {
-    name: "@storybook/nextjs",
+    name: "@storybook/react-vite",
     options: {},
   },
   docs: {

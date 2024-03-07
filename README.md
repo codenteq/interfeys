@@ -1,4 +1,4 @@
-<p align="center"><img src="https://codenteq.com/wp-content/uploads/2022/11/web-logo.webp" width="200" alt="İnterfeys Design System Logo" /></p>
+<p align="center"><img src="https://codenteq.com/wp-content/uploads/2024/03/interfeys-logo.webp" width="250" alt="İnterfeys Design System Logo" /></p>
 
 <h1 align="center">Interfeys Design System</h1>
 
@@ -37,7 +37,7 @@ npm i @codenteq/interfeys
 ```
 
 ## How to contribute
-Interfeys Design System is always open for direct contributions. Contributions can be in the form of design suggestions, documentation improvements, new component suggestions, code improvements, adding new features or fixing problems. For more information please check our [Contribution Guideline document.](https://github.com/codenteq/interfeys/blob/next/CONTRIBUTING.md)
+Interfeys Design System is always open for direct contributions. Contributions can be in the form of design suggestions, documentation improvements, new component suggestions, code improvements, adding new features or fixing problems. For more information please check our [Contribution Guideline document.](https://github.com/codenteq/interfeys/blob/master/CONTRIBUTING.md)
 
 ## Useful Links
 

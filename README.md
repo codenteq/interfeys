@@ -6,8 +6,8 @@
   <a href="https://www.npmjs.com/package/@codenteq/interfeys">
     <img src="https://img.shields.io/npm/v/@codenteq/interfeys.svg" alt="NPM Package Stable" />
   </a>
-  <a href="https://github.com/codenteq/interfeys/blob/next/LICENSE">
-    <img src="https://img.shields.io/github/license/codenteq/interfeys" alt="License" />
+  <a href="https://github.com/codenteq/interfeys/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/codenteq/interfeys.svg" alt="License" />
   </a>
   <a href="https://www.jsdelivr.com/package/npm/@codenteq/interfeys">
     <img src="https://img.shields.io/jsdelivr/npm/hm/@codenteq/interfeys" alt="jsDelivr hits" />

@@ -4,12 +4,12 @@ import React, { SelectHTMLAttributes } from 'react';
 
 interface SelectOption {
     label: string;
-    value: string;
+    value: string | number;
 }
 
 interface ISelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
     options: SelectOption[];
-    value?: string | number;
+    value?: string;
     placeholder?: string;
     className?: string;
     required?: boolean;

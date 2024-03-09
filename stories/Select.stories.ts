@@ -1,5 +1,5 @@
-import Select from "../src/select/Select";
-import type {Meta, StoryObj} from "@storybook/react";
+import Select from '../src/select/Select';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
     title: 'Components/Select',
@@ -13,19 +13,13 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: {
-    args: {
-        options: ({ label: string; value: string })[];
-        className: string;
-        placeholder: string
-    }
-} = {
+export const Primary: Story = {
     args: {
         placeholder: 'Choose',
         options: [
-            {label: 'Option 1', value: 'option1'},
-            {label: 'Option 2', value: 'option2'}
+            { label: 'Option 1', value: 'option1' },
+            { label: 'Option 2', value: 'option2' },
         ],
-        className: "w-96"
+        className: 'w-96',
     },
 };

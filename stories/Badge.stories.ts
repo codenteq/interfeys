@@ -1,5 +1,5 @@
-import Badge from "../src/badge/Badge";
-import type {Meta, StoryObj} from "@storybook/react";
+import Badge from '../src/badge/Badge';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
     title: 'Components/Badge',
@@ -13,8 +13,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: { args: { name: string } } = {
+export const Primary: Story = {
     args: {
-        name: "BADGE"
+        name: 'BADGE',
     },
 };

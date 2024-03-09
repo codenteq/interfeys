@@ -1,11 +1,9 @@
 'use client';
 
 import React, { ChangeEvent, ReactNode } from 'react';
-import ButtonLink from '../default-link/ButtonLink';
 import Input from '../input/Input';
 import { useTable, usePagination, Column } from 'react-table';
 import Pagination from './Pagination';
-import Button from '../button/Button';
 import { IBasePaginate } from './IPaginate';
 
 interface DataRow {
@@ -16,19 +14,10 @@ interface IDatatableProps {
     columns: Column<DataRow>[];
     data: DataRow[];
     pagePaginate: number;
-    // eslint-disable-next-line no-unused-vars
     setPagePaginate: (page: number) => void;
     meta: IBasePaginate;
     isLoading: boolean;
-    link?: {
-        name: string;
-        href: string;
-    };
-    button?: {
-        onClick: () => void;
-        name: string;
-    };
-    // eslint-disable-next-line no-unused-vars
+    tableTopRightHeader?: ReactNode;
     setSearch: (search: string) => void;
 }
 
@@ -39,9 +28,8 @@ export default function Datatable({
     setPagePaginate,
     meta,
     isLoading,
-    link,
-    button,
     setSearch,
+    tableTopRightHeader,
 }: IDatatableProps): ReactNode {
     const {
         getTableProps,
@@ -78,10 +66,7 @@ export default function Datatable({
                         </div>
                     </div>
                     <div className="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-                        {link && <ButtonLink name={link.name} href={link.href} />}
-                        {button && (
-                            <Button onClick={button.onClick} label={button.name} type={"button"}/>
-                        )}
+                        {tableTopRightHeader}
                     </div>
                 </div>
 

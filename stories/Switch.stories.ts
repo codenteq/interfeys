@@ -1,5 +1,5 @@
-import Switch from "../src/switch/Switch";
-import type {Meta, StoryObj} from "@storybook/react";
+import Switch from '../src/switch/Switch';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
     title: 'Components/Switch',
@@ -13,8 +13,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: { args: { type: string } } = {
+export const Primary: Story = {
     args: {
-        type: "checkbox"
+        type: 'checkbox',
     },
 };

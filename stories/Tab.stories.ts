@@ -1,5 +1,5 @@
-import Tab from "../src/tab-group/Tab";
-import type {Meta, StoryObj} from "@storybook/react";
+import Tab from '../src/tab-group/Tab';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
     title: 'Components/Tab Group',
@@ -13,9 +13,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: { args: { children: string[]; tabs: string[] } } = {
+export const Primary: Story = {
     args: {
         tabs: ['Tab 1', 'Tab 2'],
-        children: ['Tab content 1', 'Tab content 2']
+        children: ['Tab content 1', 'Tab content 2'],
     },
 };

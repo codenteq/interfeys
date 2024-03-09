@@ -1,5 +1,5 @@
-import Input from "../src/input/Input";
-import type {Meta, StoryObj} from "@storybook/react";
+import Input from '../src/input/Input';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
     title: 'Components/Input',
@@ -13,100 +13,100 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const TextInput: { args: { placeholder: string; type: string } } = {
+export const TextInput: Story = {
     args: {
-        type: "text",
-        placeholder: "Text Input"
+        type: 'text',
+        placeholder: 'Text Input',
     },
 };
 
-export const EmailInput: { args: { placeholder: string; type: string } } = {
+export const EmailInput: Story = {
     args: {
-        type: "email",
-        placeholder: "Email Input"
+        type: 'email',
+        placeholder: 'Email Input',
     },
 };
 
-export const DateInput: { args: { type: string } } = {
+export const DateInput: Story = {
     args: {
-        type: "date",
+        type: 'date',
     },
 };
 
-export const TimeInput: { args: { type: string } } = {
+export const TimeInput: Story = {
     args: {
-        type: "time",
+        type: 'time',
     },
 };
 
-export const DatetimeLocalInput: { args: { type: string } } = {
+export const DatetimeLocalInput: Story = {
     args: {
-        type: "datetime-local",
+        type: 'datetime-local',
     },
 };
 
-export const MonthInput: { args: { type: string } } = {
+export const MonthInput: Story = {
     args: {
-        type: "month",
+        type: 'month',
     },
 };
 
 export const WeekInput: Story = {
     args: {
-        type: "week",
+        type: 'week',
     },
 };
 
-export const PasswordInput: { args: { placeholder: string; type: string } } = {
+export const PasswordInput: Story = {
     args: {
-        type: "password",
-        placeholder: "Password Input"
+        type: 'password',
+        placeholder: 'Password Input',
     },
 };
 
-export const NumberInput: { args: { placeholder: string; type: string } } = {
+export const NumberInput: Story = {
     args: {
-        type: "number",
-        placeholder: "Number Input"
+        type: 'number',
+        placeholder: 'Number Input',
     },
 };
 
-export const TelInput: { args: { pattern: string; placeholder: string; type: string } } = {
+export const TelInput: Story = {
     args: {
-        type: "tel",
-        placeholder: "Tel Input",
-        pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        type: 'tel',
+        placeholder: 'Tel Input',
+        pattern: '[0-9]{3}-[0-9]{3}-[0-9]{4}',
     },
 };
 
-export const UrlInput: { args: { placeholder: string; type: string } } = {
+export const UrlInput: Story = {
     args: {
-        type: "url",
-        placeholder: "URL Input"
+        type: 'url',
+        placeholder: 'URL Input',
     },
 };
 
-export const FileInput: { args: { type: string } } = {
+export const FileInput: Story = {
     args: {
-        type: "file",
+        type: 'file',
     },
 };
 
-export const Search: { args: { placeholder: string; type: string } } = {
+export const Search: Story = {
     args: {
-        type: "search",
-        placeholder: "Search"
+        type: 'search',
+        placeholder: 'Search',
     },
 };
 
-export const Checkbox: { args: { type: string } } = {
+export const Checkbox: Story = {
     args: {
-        type: "checkbox",
+        type: 'checkbox',
     },
 };
 
-export const RangeInput: { args: { type: string } } = {
+export const RangeInput: Story = {
     args: {
-        type: "range",
+        type: 'range',
     },
 };

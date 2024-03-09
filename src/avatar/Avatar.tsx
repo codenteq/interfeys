@@ -4,7 +4,7 @@ import React from 'react';
 
 interface IAvatarProps {
     name?: string;
-    letter: string | React.ReactNode;
+    letter: string;
     className?: string;
 }
 

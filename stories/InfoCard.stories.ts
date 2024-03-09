@@ -1,5 +1,5 @@
-import InfoCard from "../src/info-card/InfoCard";
-import type {Meta, StoryObj} from "@storybook/react";
+import InfoCard from '../src/info-card/InfoCard';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
     title: 'Components/Info Card',
@@ -13,8 +13,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: { args: { children: string } } = {
+export const Primary: Story = {
     args: {
-        children: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+        children:
+            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     },
 };

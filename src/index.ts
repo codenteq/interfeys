@@ -4,6 +4,7 @@ export { default as Button } from './button/Button';
 export { default as Card } from './card/Card';
 export { default as InfoCard } from './info-card/InfoCard';
 export { default as Input } from './input/Input';
+export { default as Label } from './label/Label';
 export { default as Modal } from './modal/Modal';
 export { default as Radio } from './radio/Radio';
 export { default as Select } from './select/Select';

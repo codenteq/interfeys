@@ -1,5 +1,3 @@
-'use client';
-
 import React, { ChangeEvent, ReactNode } from 'react';
 import Input from '../input/Input';
 import { useTable, usePagination, Column } from 'react-table';

@@ -1,6 +1,4 @@
-'use client';
-
-import React, { SelectHTMLAttributes } from 'react';
+import React, { forwardRef, Ref, SelectHTMLAttributes } from 'react';
 
 interface SelectOption {
     label: string;
@@ -17,19 +15,23 @@ interface ISelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
     messages?: string | string[];
 }
 
-export default function Select({
-    options,
-    value,
-    placeholder,
-    className,
-    required,
-    disabled,
-    messages = [],
-    ...props
-}: ISelectProps) {
-    return (
+const Select = forwardRef(
+    (
+        {
+            options,
+            value,
+            placeholder,
+            className,
+            required,
+            disabled,
+            messages = [],
+            ...props
+        }: ISelectProps,
+        ref: Ref<HTMLSelectElement>,
+    ) => (
         <div>
             <select
+                ref={ref}
                 value={value}
                 className={`${className} w-full text-sm transition placeholder-transition hover:border-zinc-900 dark:hover:border-zinc-300 hover:placeholder-text-zinc-900 dark:hover:placeholder-text-zinc-300 focus:ring-transparent focus:border-zinc-900 dark:focus:border-zinc-300 bg-white dark:bg-black text-zinc-900 dark:text-zinc-300 focus:placeholder-text-zinc-900 dark:focus:placeholder-text-zinc-300 rounded-lg p-3`}
                 disabled={disabled}
@@ -58,5 +60,8 @@ export default function Select({
                 <p className="text-sm text-red-600">{messages}</p>
             )}
         </div>
-    );
-}
+    ),
+);
+Select.displayName = 'Select';
+
+export default Select;

@@ -1,4 +1,4 @@
-import Select from "./Select";
+import Select from "../src/select/Select";
 import type {Meta, StoryObj} from "@storybook/react";
 
 const meta = {
@@ -13,7 +13,13 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Primary: {
+    args: {
+        options: ({ label: string; value: string })[];
+        className: string;
+        placeholder: string
+    }
+} = {
     args: {
         placeholder: 'Choose',
         options: [

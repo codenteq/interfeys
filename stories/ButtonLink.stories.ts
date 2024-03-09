@@ -1,6 +1,6 @@
-import Button from "./ButtonLink";
+import Button from "../src/default-link/ButtonLink";
 import type {Meta, StoryObj} from "@storybook/react";
-import ButtonLink from "./ButtonLink";
+import ButtonLink from "../src/default-link/ButtonLink";
 
 const meta = {
     title: 'Components/Button Link',
@@ -14,7 +14,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Primary: { args: { name: string; href: string } } = {
     args: {
         name: 'Primary Button',
         href: '#'

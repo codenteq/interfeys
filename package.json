@@ -1,10 +1,18 @@
 {
   "name": "@codenteq/interfeys",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Codenteq Interfeys Design System",
-  "main": "src/index.ts",
-  "module": "src/index.ts",
-  "type": "commonjs",
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -17,8 +25,9 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "storybook dev -p 6006",
-    "build": "vite build",
+    "build": "tsc",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
+    "storybook": "npm run build:cjs && storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "keywords": [
@@ -37,13 +46,13 @@
     "@storybook/react": "^7.6.17",
     "@storybook/react-vite": "^7.6.17",
     "@storybook/test": "^7.6.17",
+    "@types/react": "^18.2.64",
     "@types/react-table": "^7.7.19",
     "postcss": "^8.4.35",
     "react-dom": "^18.2.0",
     "storybook": "^7.6.17",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.4.2",
-    "vite": "^5.1.5"
+    "typescript": "^5.4.2"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.7",

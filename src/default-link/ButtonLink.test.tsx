@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from "next/link";
 
 interface IDefaultLinkProps {
     name: string;
@@ -9,12 +8,12 @@ interface IDefaultLinkProps {
 
 export default function ButtonLink({ name, href, className}: IDefaultLinkProps) {
     return (
-        <Link href={href}>
+        <a href={href}>
             <div
                 className={`${className} text-center dark:text-white text-zinc-900 border border-brand hover:bg-brand hover:text-white transition-all rounded-lg py-2 px-4`}>
                 {name}
             </div>
-        </Link>
+        </a>
     );
 }
 

@@ -1,20 +1,20 @@
-import Radio from "./Radio";
+import Badge from "../src/badge/Badge";
 import type {Meta, StoryObj} from "@storybook/react";
 
 const meta = {
-    title: 'Components/Radio',
-    component: Radio,
+    title: 'Components/Badge',
+    component: Badge,
     parameters: {
         layout: 'centered',
     },
     tags: ['autodocs'],
-} satisfies Meta<typeof Radio>;
+} satisfies Meta<typeof Badge>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Primary: { args: { name: string } } = {
     args: {
-        type: 'radio'
+        name: "BADGE"
     },
 };

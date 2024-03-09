@@ -1,4 +1,4 @@
-import Textarea from "./Textarea";
+import Textarea from "../src/textarea/Textarea";
 import type {Meta, StoryObj} from "@storybook/react";
 
 const meta = {
@@ -13,7 +13,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Primary: { args: { placeholder: string } } = {
     args: {
         placeholder: 'Textarea'
     },

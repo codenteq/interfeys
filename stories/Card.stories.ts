@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card from "../src/card/Card";
 import type {Meta, StoryObj} from "@storybook/react";
 
 const meta = {
@@ -13,7 +13,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Primary: { args: { children: string; link: { name: string; href: string } } } = {
     args: {
         children: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
         link: {

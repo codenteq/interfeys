@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Modal from "./Modal";
+import Modal from "../src/modal/Modal";
 import type {Meta} from "@storybook/react";
-import Button from "../button/Button";
+import Button from "../src/button/Button";
 
 const meta = {
     title: 'Components/Modal',
@@ -32,15 +32,10 @@ export default meta;
 
 export function Primary({ ...args }) {
     const [isOpen, setIsOpen] = useState(false);
-    const openModal = () => {
-        setIsOpen(true);
-    };
-    const closeModal = () => {
-        setIsOpen(false);
-    };
+
     return (
         <>
-            <Button onClick={openModal} label={'Open Modal'} type={"button"}/>
+            <Button onClick={() => setIsOpen(true)} label={'Open Modal'} type={"button"}/>
             {isOpen && (
                 <Modal title={args.title} isOpen={isOpen} setIsOpen={setIsOpen}>
                     {args.children}

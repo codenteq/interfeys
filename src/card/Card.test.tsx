@@ -1,5 +1,4 @@
 import React, {ReactNode, useState} from 'react';
-import Link from "next/link";
 
 interface ICardProps {
     className?: string;
@@ -46,11 +45,11 @@ export default function Card({ className, link, button, children, }: ICardProps)
                                     <ul className="absolute rounded-lg shadow-md backdrop-blur-lg bg-black/20 dark:bg-white/10">
                                         <li>
                                             {link && (
-                                                <Link href={link?.href}>
+                                                <a href={link?.href}>
                                                     <div className="mr-2 px-4 py-2 text-zinc-900 hover:text-zinc-700 dark:text-zinc-300 dark:hover:text-zinc-500 cursor-pointer">
                                                         {link?.name}
                                                     </div>
-                                                </Link>
+                                                </a>
                                             )}
                                         </li>
                                         <li>

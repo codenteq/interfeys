@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import Datatable from "./Datatable";
+import React, {useEffect, useState} from 'react';
+import Datatable from "../src/table/Datatable";
 import type {Meta} from "@storybook/react";
 
 const meta = {
@@ -13,9 +13,13 @@ const meta = {
 
 export default meta;
 
-export function Primary({ ...args }) {
+export function Primary() {
     const [pagePaginate, setPagePaginate] = useState(1);
     const [search, setSearch] = useState('');
+
+    useEffect(() => {
+        //
+    }, [search]);
 
     const data = [
         {

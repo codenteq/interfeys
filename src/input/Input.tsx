@@ -25,15 +25,11 @@ interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
     className?: string;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
     placeholder?: string;
-    minLength?: number;
-    maxLength?: number;
-    min?: number;
-    max?: number;
     autoFocus?: boolean;
     required?: boolean;
     disabled?: boolean;
     helpText?: string;
-    messages?: string[];
+    messages?: string | string[];
 }
 
 export default function Input({
@@ -42,10 +38,6 @@ export default function Input({
     value,
     onChange,
     placeholder,
-    minLength,
-    maxLength,
-    min,
-    max,
     autoFocus,
     required,
     disabled,
@@ -61,10 +53,6 @@ export default function Input({
                 onChange={onChange}
                 placeholder={placeholder}
                 className={`${className} transition placeholder:transition caret-brand accent-brand hover:border-zinc-900 dark:hover:border-zinc-300 hover:placeholder:text-zinc-900 dark:hover:placeholder:text-zinc-300 focus:ring-transparent focus:border-zinc-900 dark:focus:border-zinc-300 dark:bg-black text-zinc-900 dark:text-zinc-300 focus:placeholder:text-zinc-900 dark:focus:placeholder:text-zinc-300 rounded-lg p-2.5`}
-                minLength={minLength}
-                maxLength={maxLength}
-                min={min}
-                max={max}
                 autoFocus={autoFocus}
                 required={required}
                 disabled={disabled}
@@ -75,7 +63,7 @@ export default function Input({
                     {helpText}
                 </div>
             )}
-            {messages.length > 0 && (
+            {messages.length > 0 && Array.isArray(messages) ? (
                 <>
                     {messages.map((message, index) => (
                         <p className="text-sm text-red-600" key={index}>
@@ -83,6 +71,8 @@ export default function Input({
                         </p>
                     ))}
                 </>
+            ) : (
+                <p className="text-sm text-red-600">{messages}</p>
             )}
         </div>
     );

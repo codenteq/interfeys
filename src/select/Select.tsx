@@ -9,12 +9,12 @@ interface SelectOption {
 
 interface ISelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
     options: SelectOption[];
-    value?: string;
+    value?: string | number;
     placeholder?: string;
     className?: string;
     required?: boolean;
     disabled?: boolean;
-    messages?: string[];
+    messages?: string | string[];
 }
 
 export default function Select({
@@ -46,7 +46,7 @@ export default function Select({
                     </option>
                 ))}
             </select>
-            {messages.length > 0 && (
+            {messages.length > 0 && Array.isArray(messages) ? (
                 <>
                     {messages.map((message, index) => (
                         <p className="text-sm text-red-600" key={index}>
@@ -54,6 +54,8 @@ export default function Select({
                         </p>
                     ))}
                 </>
+            ) : (
+                <p className="text-sm text-red-600">{messages}</p>
             )}
         </div>
     );

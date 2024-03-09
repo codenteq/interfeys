@@ -1,9 +1,10 @@
 {
   "name": "@codenteq/interfeys",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Codenteq Interfeys Design System",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
+  "type": "module",
   "files": [
     "dist"
   ],
@@ -28,7 +29,9 @@
     "build": "tsc",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
     "storybook": "npm run build:cjs && storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "lint": "eslint . --ext ts,tsx",
+    "lint:prettier": "prettier --check src"
   },
   "keywords": [
     "web-components",
@@ -48,7 +51,12 @@
     "@storybook/test": "^7.6.17",
     "@types/react": "^18.2.64",
     "@types/react-table": "^7.7.19",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.0",
     "postcss": "^8.4.35",
+    "prettier": "3.2.5",
     "react-dom": "^18.2.0",
     "storybook": "^7.6.17",
     "tailwindcss": "^3.4.1",

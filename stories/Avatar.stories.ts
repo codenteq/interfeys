@@ -1,5 +1,5 @@
-import Avatar from "../src/avatar/Avatar";
-import type {Meta, StoryObj} from "@storybook/react";
+import Avatar from '../src/avatar/Avatar';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
     title: 'Components/Avatar',
@@ -13,9 +13,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: { args: { letter: string; name: string } } = {
+export const Primary: Story = {
     args: {
-        name: "Avatar",
-        letter: "A"
+        name: 'Avatar',
+        letter: 'A',
     },
 };

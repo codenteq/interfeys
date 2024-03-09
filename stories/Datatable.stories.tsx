@@ -1,12 +1,13 @@
-import React, {useEffect, useState} from 'react';
-import Datatable from "../src/table/Datatable";
-import type {Meta} from "@storybook/react";
+import React, { useEffect, useState } from 'react';
+import Datatable from '../src/table/Datatable';
+import type { Meta } from '@storybook/react';
+import { Button } from '../src';
 
 const meta = {
     title: 'Components/Datatable',
     component: Datatable,
     parameters: {
-        layout: 'centered'
+        layout: 'centered',
     },
     tags: ['autodocs'],
 } satisfies Meta<typeof Datatable>;
@@ -24,24 +25,24 @@ export function Primary() {
     const data = [
         {
             id: 1,
-            full_name: "Zeynep",
-            email: "student@imtihan.tech",
-        }
+            full_name: 'Zeynep',
+            email: 'student@imtihan.tech',
+        },
     ];
 
     const meta = {
         current_page: 1,
         last_page: 1,
         total: 2,
-        "links": [
+        links: [
             {
-                "url": null,
-                "label": "&laquo; Previous",
-                "active": false
-            }
+                url: null,
+                label: '&laquo; Previous',
+                active: false,
+            },
         ],
         from: 1,
-        to: 2
+        to: 2,
     };
 
     const columns = [
@@ -52,7 +53,7 @@ export function Primary() {
         {
             Header: 'Email',
             accessor: 'email',
-        }
+        },
     ];
     return (
         <>
@@ -62,11 +63,12 @@ export function Primary() {
                 pagePaginate={pagePaginate}
                 setPagePaginate={setPagePaginate}
                 meta={meta}
-                link={{name: 'Primary Button', href: '#'}}
                 isLoading={false}
+                tableTopRightHeader={
+                    <Button type={'button'} label={'Primary Button'} />
+                }
                 setSearch={setSearch}
             />
         </>
     );
-
-};
+}

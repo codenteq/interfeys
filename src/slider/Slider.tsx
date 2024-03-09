@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -13,7 +11,14 @@ interface ISliderProps {
     spaceBetween?: number;
 }
 
-export default function Slider({ images, width, height, className, slidesPerView = 1, spaceBetween = 20 }: ISliderProps) {
+export default function Slider({
+    images,
+    width,
+    height,
+    className,
+    slidesPerView = 1,
+    spaceBetween = 20,
+}: ISliderProps) {
     return (
         <Swiper
             className={className}

@@ -1,6 +1,9 @@
-'use client';
-
-import React, { ChangeEvent, InputHTMLAttributes } from 'react';
+import React, {
+    ChangeEvent,
+    forwardRef,
+    InputHTMLAttributes,
+    Ref,
+} from 'react';
 
 type InputType = 'radio';
 
@@ -11,22 +14,26 @@ interface IRadioProps extends InputHTMLAttributes<HTMLInputElement> {
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
     required?: boolean;
     disabled?: boolean;
-    messages?: string[];
+    messages?: string | string[];
 }
 
-export default function Radio({
-    className,
-    type,
-    value,
-    onChange,
-    required,
-    disabled,
-    messages = [],
-    ...props
-}: IRadioProps) {
-    return (
+const Radio = forwardRef(
+    (
+        {
+            className,
+            type,
+            value,
+            onChange,
+            required,
+            disabled,
+            messages = [],
+            ...props
+        }: IRadioProps,
+        ref: Ref<HTMLInputElement>,
+    ) => (
         <div>
             <input
+                ref={ref}
                 type={type}
                 value={value}
                 onChange={onChange}
@@ -35,7 +42,7 @@ export default function Radio({
                 disabled={disabled}
                 {...props}
             />
-            {messages.length > 0 && (
+            {messages.length > 0 && Array.isArray(messages) ? (
                 <>
                     {messages.map((message, index) => (
                         <p className="text-sm text-red-600" key={index}>
@@ -43,7 +50,12 @@ export default function Radio({
                         </p>
                     ))}
                 </>
+            ) : (
+                <p className="text-sm text-red-600">{messages}</p>
             )}
         </div>
-    );
-}
+    ),
+);
+Radio.displayName = 'Radio';
+
+export default Radio;

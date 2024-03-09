@@ -1,6 +1,9 @@
-'use client';
-
-import React, { ChangeEvent, InputHTMLAttributes } from 'react';
+import React, {
+    ChangeEvent,
+    forwardRef,
+    InputHTMLAttributes,
+    Ref,
+} from 'react';
 
 type InputType =
     | 'text'
@@ -32,22 +35,26 @@ interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
     messages?: string | string[];
 }
 
-export default function Input({
-    className,
-    type,
-    value,
-    onChange,
-    placeholder,
-    autoFocus,
-    required,
-    disabled,
-    helpText,
-    messages = [],
-    ...props
-}: IInputProps) {
-    return (
+const Input = forwardRef(
+    (
+        {
+            className,
+            type,
+            value,
+            onChange,
+            placeholder,
+            autoFocus,
+            required,
+            disabled,
+            helpText,
+            messages = [],
+            ...props
+        }: IInputProps,
+        ref: Ref<HTMLInputElement>,
+    ) => (
         <div>
             <input
+                ref={ref}
                 type={type}
                 value={value}
                 onChange={onChange}
@@ -75,5 +82,8 @@ export default function Input({
                 <p className="text-sm text-red-600">{messages}</p>
             )}
         </div>
-    );
-}
+    ),
+);
+Input.displayName = 'Input';
+
+export default Input;

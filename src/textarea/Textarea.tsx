@@ -1,6 +1,4 @@
-'use client';
-
-import React, { TextareaHTMLAttributes } from 'react';
+import React, { forwardRef, Ref, TextareaHTMLAttributes } from 'react';
 
 interface ITextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     rows?: number;
@@ -15,23 +13,27 @@ interface ITextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     helpText?: string;
 }
 
-export default function Textarea({
-    rows,
-    cols,
-    className,
-    value,
-    placeholder,
-    minLength,
-    maxLength,
-    autoFocus,
-    required,
-    disabled,
-    helpText,
-    ...props
-}: ITextareaProps) {
-    return (
+const Textarea = forwardRef(
+    (
+        {
+            rows,
+            cols,
+            className,
+            value,
+            placeholder,
+            minLength,
+            maxLength,
+            autoFocus,
+            required,
+            disabled,
+            helpText,
+            ...props
+        }: ITextareaProps,
+        ref: Ref<HTMLTextAreaElement>,
+    ) => (
         <div>
             <textarea
+                ref={ref}
                 rows={rows}
                 cols={cols}
                 value={value}
@@ -50,5 +52,8 @@ export default function Textarea({
                 </div>
             )}
         </div>
-    );
-}
+    ),
+);
+Textarea.displayName = 'Textarea';
+
+export default Textarea;

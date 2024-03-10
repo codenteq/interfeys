@@ -11,6 +11,7 @@ interface ITextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     required?: boolean;
     disabled?: boolean;
     helpText?: string;
+    messages?: string | string[];
 }
 
 const Textarea = forwardRef(
@@ -27,6 +28,7 @@ const Textarea = forwardRef(
             required,
             disabled,
             helpText,
+            messages = [],
             ...props
         }: ITextareaProps,
         ref: Ref<HTMLTextAreaElement>,
@@ -50,6 +52,17 @@ const Textarea = forwardRef(
                 <div className="block font-medium text-xs text-zinc-700 dark:text-zinc-400 mt-1.5">
                     {helpText}
                 </div>
+            )}
+            {messages.length > 0 && Array.isArray(messages) ? (
+                <>
+                    {messages.map((message, index) => (
+                        <p className="text-sm text-red-600" key={index}>
+                            {message}
+                        </p>
+                    ))}
+                </>
+            ) : (
+                <p className="text-sm text-red-600">{messages}</p>
             )}
         </div>
     ),

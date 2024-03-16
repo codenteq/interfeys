@@ -16,6 +16,11 @@ First, install the package:
 npm i @codenteq/interfeys
 ```
 
+In order for the styles to be applied correctly, you will need to ensure that the path to @codenteq is included in the content field of your `tailwind.config.ts`.
+```javascript
+'./node_modules/@codenteq/**/*.{js,ts,jsx,tsx}'
+```
+
 ```typescript
 <Button
   type={'button'}

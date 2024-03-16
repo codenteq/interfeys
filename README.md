@@ -24,9 +24,13 @@ Web implementation of the design system is created as native web components so i
 ## Getting Started
 
 First, install the package:
-
 ```bash
 npm i @codenteq/interfeys
+```
+
+In order for the styles to be applied correctly, you will need to ensure that the path to @codenteq is included in the content field of your `tailwind.config.ts`.
+```javascript
+'./node_modules/@codenteq/**/*.{js,ts,jsx,tsx}'
 ```
 
 ```typescript

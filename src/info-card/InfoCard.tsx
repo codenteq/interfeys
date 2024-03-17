@@ -9,7 +9,7 @@ export default function InfoCard({ className, children }: IInfoCardProps) {
     return (
         <>
             <div
-                className={`${className} bg-white dark:bg-black rounded-lg`}>
+                className={`${className} rounded-lg`}>
                 {children}
             </div>
         </>

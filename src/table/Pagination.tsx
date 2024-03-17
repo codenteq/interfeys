@@ -44,7 +44,7 @@ export default function Pagination({
                         {meta?.total}
                     </span>
                 </span>
-                <ul className="inline-flex items-stretch -space-x-px">
+                <ul className="list-none inline-flex items-stretch -space-x-px">
                     <li>
                         <button
                             onClick={customPrevPage}

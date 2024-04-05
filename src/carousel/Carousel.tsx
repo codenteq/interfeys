@@ -2,7 +2,7 @@ import React from 'react';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-interface ISliderProps {
+interface ICarouselProps {
     images: string[];
     className?: string;
     width?: number;
@@ -11,14 +11,14 @@ interface ISliderProps {
     spaceBetween?: number;
 }
 
-export default function Slider({
+export default function Carousel({
     images,
     width,
     height,
     className,
     slidesPerView = 1,
     spaceBetween = 20,
-}: ISliderProps) {
+}: ICarouselProps) {
     return (
         <Swiper
             className={className}

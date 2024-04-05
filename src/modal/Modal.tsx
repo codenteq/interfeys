@@ -59,9 +59,12 @@ export default function Modal({
                                 <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
                                     {title}
                                 </h3>
-                                <button
+                                <motion.button
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ delay: 0.2 }}
                                     onClick={onClose}
-                                    type="button"
                                     className="bg-transparent p-1.5 hover:bg-zinc-200 hover:dark:bg-zinc-800 rounded-full duration-200">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +75,7 @@ export default function Modal({
                                         viewBox="0 0 16 16">
                                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
                                     </svg>
-                                </button>
+                                </motion.button>
                             </div>
                             <div className={`${className} p-6 space-y-6`}>
                                 {children}

@@ -1,14 +1,14 @@
-import Slider from '../src/slider/Slider';
+import Carousel from '../src/carousel/Carousel';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-    title: 'Components/Slider',
-    component: Slider,
+    title: 'Components/Carousel',
+    component: Carousel,
     parameters: {
         layout: 'centered',
     },
     tags: ['autodocs'],
-} satisfies Meta<typeof Slider>;
+} satisfies Meta<typeof Carousel>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -1,21 +1,21 @@
-import Switch from '../src/switch/Switch';
+import Popover from '../src/popover/Popover';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-    title: 'Components/Switch',
-    component: Switch,
+    title: 'Components/Popover',
+    component: Popover,
     parameters: {
         layout: 'centered',
     },
     tags: ['autodocs'],
-} satisfies Meta<typeof Switch>;
+} satisfies Meta<typeof Popover>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
-        label: 'Switch',
-        id: 'switch',
+        children: 'Great!!!',
+        trigger: 'Click me',
     },
 };

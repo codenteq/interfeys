@@ -4,16 +4,16 @@ import React, {
     InputHTMLAttributes,
     Ref,
 } from 'react';
-
-type InputType = 'checkbox';
+import Label from '../label/Label';
 
 interface ISwitchProps extends InputHTMLAttributes<HTMLInputElement> {
-    type: InputType;
     value?: string;
     className?: string;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
     required?: boolean;
     disabled?: boolean;
+    label?: string;
+    id?: string;
     messages?: string | string[];
 }
 
@@ -21,21 +21,24 @@ const Switch = forwardRef(
     (
         {
             className,
-            type,
             value,
             onChange,
             required,
             disabled,
+            label,
+            id,
             messages = [],
             ...props
         }: ISwitchProps,
         ref: Ref<HTMLInputElement>,
     ) => (
         <div>
-            <label className="relative inline-flex items-center mr-5 cursor-pointer">
+            <label
+                className={`relative inline-flex items-center ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}>
                 <input
+                    id={id}
                     ref={ref}
-                    type={type}
+                    type={'checkbox'}
                     value={value}
                     onChange={onChange}
                     className={`${className} sr-only peer`}
@@ -43,7 +46,8 @@ const Switch = forwardRef(
                     disabled={disabled}
                     {...props}
                 />
-                <div className="w-11 h-6 bg-zinc-300 rounded-full peer dark:bg-zinc-900 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-zinc-600 peer-checked:bg-brand" />
+                <div className="w-11 h-6 mr-5 bg-zinc-300 rounded-full peer dark:bg-zinc-900 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-zinc-600 peer-checked:bg-brand" />
+                {label && <Label htmlFor={id}>{label}</Label>}
             </label>
             {messages.length > 0 && Array.isArray(messages) ? (
                 <>

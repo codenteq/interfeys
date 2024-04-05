@@ -1,4 +1,5 @@
 import React, { forwardRef, Ref, TextareaHTMLAttributes } from 'react';
+import Label from '../label/Label';
 
 interface ITextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     rows?: number;
@@ -11,6 +12,7 @@ interface ITextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     required?: boolean;
     disabled?: boolean;
     helpText?: string;
+    label?: string;
     messages?: string | string[];
 }
 
@@ -28,19 +30,21 @@ const Textarea = forwardRef(
             required,
             disabled,
             helpText,
+            label,
             messages = [],
             ...props
         }: ITextareaProps,
         ref: Ref<HTMLTextAreaElement>,
     ) => (
         <div>
+            {label && <Label>{label}</Label>}
             <textarea
                 ref={ref}
                 rows={rows}
                 cols={cols}
                 value={value}
                 placeholder={placeholder}
-                className={`${className} resize transition placeholder:transition caret-brand hover:border-zinc-900 dark:hover:border-zinc-300 hover:placeholder:text-zinc-900 dark:hover:placeholder:text-zinc-300 focus:ring-transparent focus:border-zinc-900 dark:focus:border-zinc-300 dark:bg-black text-zinc-900 dark:text-zinc-300 focus:placeholder:text-zinc-900 dark:focus:placeholder:text-zinc-300 rounded-lg p-2.5`}
+                className={`${className} ${disabled ? 'cursor-not-allowed' : ''} resize transition placeholder:transition caret-brand hover:border-zinc-900 dark:hover:border-zinc-300 hover:placeholder:text-zinc-900 dark:hover:placeholder:text-zinc-300 focus:ring-transparent focus:border-zinc-900 dark:focus:border-zinc-300 dark:bg-black text-zinc-900 dark:text-zinc-300 focus:placeholder:text-zinc-900 dark:focus:placeholder:text-zinc-300 rounded-lg p-2.5`}
                 minLength={minLength}
                 maxLength={maxLength}
                 autoFocus={autoFocus}

@@ -1,15 +1,16 @@
 import React from 'react';
+import './badge.css'
 
 interface IBadgeProps {
     className?: string;
-    name: string;
+    children: React.ReactNode;
 }
 
-export default function Badge({ className, name }: IBadgeProps) {
+export default function Badge({ className, children }: IBadgeProps) {
     return (
         <span
-            className={`${className} bg-brand text-white px-2.5 py-0.5 rounded uppercase`}>
-            {name}
+            className={`${className} badge`}>
+            {children}
         </span>
     );
 }

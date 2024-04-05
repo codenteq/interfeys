@@ -17,5 +17,6 @@ export const Primary: Story = {
     args: {
         children:
             'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        className: 'max-w-sm p-6 bg-zinc-50 dark:bg-zinc-950',
     },
 };

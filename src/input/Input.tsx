@@ -4,6 +4,7 @@ import React, {
     InputHTMLAttributes,
     Ref,
 } from 'react';
+import Label from '../label/Label';
 
 type InputType =
     | 'text'
@@ -32,6 +33,7 @@ interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
     required?: boolean;
     disabled?: boolean;
     helpText?: string;
+    label?: string;
     messages?: string | string[];
 }
 
@@ -47,12 +49,14 @@ const Input = forwardRef(
             required,
             disabled,
             helpText,
+            label,
             messages = [],
             ...props
         }: IInputProps,
         ref: Ref<HTMLInputElement>,
     ) => (
         <div>
+            {label && <Label>{label}</Label>}
             <input
                 ref={ref}
                 type={type}

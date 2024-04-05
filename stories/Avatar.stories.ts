@@ -19,3 +19,10 @@ export const Primary: Story = {
         letter: 'A',
     },
 };
+
+export const Secondary: Story = {
+    args: {
+        name: 'Avatar',
+        src: 'https://secure.gravatar.com/avatar/074329e344220ee665c78595257cd8c4?s=64&f=y&r=g',
+    },
+};

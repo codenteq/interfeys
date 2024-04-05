@@ -42,7 +42,7 @@ export default function Card({
                                 </div>
                                 {isOpen && (
                                     <div className="relative">
-                                        <ul className="absolute rounded-lg shadow-md backdrop-blur-lg bg-black/20 dark:bg-white/10">
+                                        <ul className="absolute rounded-lg shadow-md backdrop-blur-lg bg-white/50 dark:bg-black/20 list-none">
                                             {actions?.map(
                                                 (
                                                     action: ReactNode,

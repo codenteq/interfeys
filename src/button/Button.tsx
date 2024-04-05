@@ -4,6 +4,7 @@ type IButtonType = 'button' | 'submit' | 'reset';
 
 interface IButtonProps {
     type: IButtonType;
+    id?: string;
     className?: string;
     onClick?: () => void;
     disabled?: boolean;
@@ -14,6 +15,7 @@ interface IButtonProps {
 
 export default function Button({
     type,
+    id,
     disabled,
     className,
     isLoading = false,
@@ -23,6 +25,7 @@ export default function Button({
 }: IButtonProps) {
     return (
         <button
+            id={id}
             type={type}
             disabled={disabled}
             className={`${className} dark:text-white text-zinc-900 border border-brand hover:bg-brand hover:text-white transition-all rounded-lg px-4 py-2`}

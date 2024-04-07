@@ -110,3 +110,15 @@ export const RangeInput: Story = {
         type: 'range',
     },
 };
+
+export const HiddenInput: Story = {
+    args: {
+        type: 'hidden',
+    },
+};
+
+export const ColorInput: Story = {
+    args: {
+        type: 'color',
+    },
+};

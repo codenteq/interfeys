@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface IDrawerProps {
@@ -8,6 +8,20 @@ interface IDrawerProps {
 }
 
 export default function Modal({ isOpen, onClose, children }: IDrawerProps) {
+    useEffect(() => {
+        const handleKeyPress = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                onClose();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyPress);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyPress);
+        };
+    }, []);
+
     return (
         <AnimatePresence>
             {isOpen && (
@@ -27,7 +41,7 @@ export default function Modal({ isOpen, onClose, children }: IDrawerProps) {
                             damping: 30,
                             delay: 0.1,
                         }}
-                        className="bg-white w-80 h-full shadow-xl overflow-y-auto">
+                        className="bg-white dark:bg-black border-l border-brand w-80 h-full shadow-xl overflow-y-auto">
                         <div className="px-4 py-6">{children}</div>
                     </motion.div>
                     <motion.button

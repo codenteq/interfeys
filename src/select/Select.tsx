@@ -1,4 +1,5 @@
 import React, { forwardRef, Ref, SelectHTMLAttributes } from 'react';
+import Label from '../label/Label';
 
 interface SelectOption {
     label: string;
@@ -13,6 +14,7 @@ interface ISelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
     required?: boolean;
     disabled?: boolean;
     messages?: string | string[];
+    label?: string;
 }
 
 const Select = forwardRef(
@@ -25,11 +27,13 @@ const Select = forwardRef(
             required,
             disabled,
             messages = [],
+            label,
             ...props
         }: ISelectProps,
         ref: Ref<HTMLSelectElement>,
     ) => (
         <div>
+            {label && <Label>{label}</Label>}
             <select
                 ref={ref}
                 value={value}

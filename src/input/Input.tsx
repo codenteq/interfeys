@@ -22,7 +22,9 @@ type InputType =
     | 'file'
     | 'search'
     | 'checkbox'
-    | 'range';
+    | 'range'
+    | 'hidden'
+    | 'color';
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
     type: InputType;
@@ -69,9 +71,11 @@ const Input = forwardRef(
                     <input
                         ref={ref}
                         type={
-                            type === 'password' && !showPassword
-                                ? 'password'
-                                : 'text'
+                            type !== 'password'
+                                ? type
+                                : !showPassword
+                                  ? 'password'
+                                  : 'text'
                         }
                         value={value}
                         onChange={onChange}

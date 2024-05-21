@@ -7,7 +7,6 @@ const meta = {
     title: 'Components/Dialog',
     component: Dialog,
     parameters: {
-        layout: 'centered',
         disableZoom: true,
         docs: {
             story: {

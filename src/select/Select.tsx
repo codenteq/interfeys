@@ -1,13 +1,8 @@
 import React, { forwardRef, Ref, SelectHTMLAttributes } from 'react';
 import Label from '../label/Label';
 
-interface SelectOption {
-    label: string;
-    value: string | number;
-}
-
 interface ISelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
-    options: SelectOption[];
+    children: React.ReactNode;
     value?: string;
     placeholder?: string;
     className?: string;
@@ -20,7 +15,7 @@ interface ISelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
 const Select = forwardRef(
     (
         {
-            options,
+            children,
             value,
             placeholder,
             className,
@@ -32,7 +27,7 @@ const Select = forwardRef(
         }: ISelectProps,
         ref: Ref<HTMLSelectElement>,
     ) => (
-        <div>
+        <>
             {label && <Label>{label}</Label>}
             <select
                 ref={ref}
@@ -46,11 +41,7 @@ const Select = forwardRef(
                         {placeholder}
                     </option>
                 )}
-                {options.map((option, index) => (
-                    <option key={index} value={option.value}>
-                        {option.label}
-                    </option>
-                ))}
+                {children}
             </select>
             {messages.length > 0 && Array.isArray(messages) ? (
                 <>
@@ -63,7 +54,7 @@ const Select = forwardRef(
             ) : (
                 <p className="text-sm text-red-600">{messages}</p>
             )}
-        </div>
+        </>
     ),
 );
 Select.displayName = 'Select';

@@ -1,65 +1,47 @@
 import React, { forwardRef, Ref, SelectHTMLAttributes } from 'react';
-
-interface Option {
-    value: string;
-    label: string;
-}
-
-interface OptGroup {
-    label: string;
-    options: Option[];
-    disabled?: boolean;
-}
+import Label from '../label/Label';
 
 interface IOptGroupProps extends SelectHTMLAttributes<HTMLSelectElement> {
-    groups: OptGroup[];
-    onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+    children: React.ReactNode;
+    placeholder?: string;
+    value?: string;
     className?: string;
     required?: boolean;
     disabled?: boolean;
-    placeholder?: string;
     messages?: string | string[];
+    label?: string;
 }
 
 const OptGroup = forwardRef(
     (
         {
-            groups,
-            onChange,
+            children,
+            value,
+            placeholder,
             className,
             required,
             disabled,
-            placeholder,
             messages = [],
+            label,
             ...props
         }: IOptGroupProps,
         ref: Ref<HTMLSelectElement>,
     ) => (
         <div>
+            {label && <Label>{label}</Label>}
             <select
                 ref={ref}
-                onChange={onChange}
+                value={value}
                 className={`${className} ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'} w-full text-sm transition placeholder-transition hover:border-zinc-900 dark:hover:border-zinc-300 hover:placeholder-text-zinc-900 dark:hover:placeholder-text-zinc-300 focus:ring-transparent focus:border-zinc-900 dark:focus:border-zinc-300 bg-white dark:bg-black text-zinc-900 dark:text-zinc-300 focus:placeholder-text-zinc-900 dark:focus:placeholder-text-zinc-300 rounded-lg p-3`}
-                required={required}
                 disabled={disabled}
+                required={required}
                 {...props}>
                 {placeholder && (
                     <option disabled selected>
                         {placeholder}
                     </option>
                 )}
-                {groups.map((group, index) => (
-                    <optgroup
-                        key={index}
-                        label={group.label}
-                        disabled={group.disabled}>
-                        {group.options.map(option => (
-                            <option key={option.value} value={option.value}>
-                                {option.label}
-                            </option>
-                        ))}
-                    </optgroup>
-                ))}
+                {children}
             </select>
             {messages.length > 0 && Array.isArray(messages) ? (
                 <>

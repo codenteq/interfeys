@@ -7,7 +7,6 @@ const meta = {
     title: 'Components/Drawer',
     component: Drawer,
     parameters: {
-        layout: 'centered',
         disableZoom: true,
         docs: {
             story: {

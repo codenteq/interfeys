@@ -6,9 +6,6 @@ import { Button } from '../src';
 const meta = {
     title: 'Components/Datatable',
     component: Datatable,
-    parameters: {
-        layout: 'centered',
-    },
     tags: ['autodocs'],
 } satisfies Meta<typeof Datatable>;
 

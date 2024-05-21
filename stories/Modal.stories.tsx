@@ -7,7 +7,6 @@ const meta = {
     title: 'Components/Modal',
     component: Modal,
     parameters: {
-        layout: 'centered',
         disableZoom: true,
         docs: {
             story: {

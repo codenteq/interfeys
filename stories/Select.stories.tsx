@@ -27,3 +27,33 @@ export function Disabled() {
         </Select>
     );
 }
+
+export function OptGroup() {
+    return (
+        <Select label="Option Group" placeholder="Choose">
+            <optgroup label="Fruits">
+                <option value="apple">Apple</option>
+                <option value="banana">Banana</option>
+            </optgroup>
+            <optgroup label="Vegetables">
+                <option value="carrot">Carrot</option>
+                <option value="broccoli">Broccoli</option>
+            </optgroup>
+        </Select>
+    );
+}
+
+export function OptGroupDisabled() {
+    return (
+        <Select label="Option Group" placeholder="Choose">
+            <optgroup label="Fruits">
+                <option value="apple">Apple</option>
+                <option value="banana">Banana</option>
+            </optgroup>
+            <optgroup label="Vegetables" disabled={true}>
+                <option value="carrot">Carrot</option>
+                <option value="broccoli">Broccoli</option>
+            </optgroup>
+        </Select>
+    );
+}

@@ -17,3 +17,6 @@ export { default as Drawer } from './drawer/Drawer';
 export { default as Dialog } from './dialog/Dialog';
 export { default as Popover } from './popover/Popover';
 export { default as Accordion } from './accordion/Accordion';
+export { default as AccordionBody } from './accordion/AccordionBody';
+export { default as AccordionHeader } from './accordion/AccordionHeader';
+export { default as AccordionList } from './accordion/AccordionList';

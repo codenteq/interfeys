@@ -1,11 +1,11 @@
 import React from 'react';
+import type { Meta } from '@storybook/react';
 import {
+    Accordion,
     AccordionBody,
     AccordionHeader,
-    Accordion,
     AccordionList,
-} from '../src/accordion/Accordion';
-import type { Meta } from '@storybook/react';
+} from '../src/';
 
 const meta = {
     title: 'Components/Accordion',

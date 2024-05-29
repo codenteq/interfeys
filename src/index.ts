@@ -16,3 +16,4 @@ export { default as Textarea } from './textarea/Textarea';
 export { default as Drawer } from './drawer/Drawer';
 export { default as Dialog } from './dialog/Dialog';
 export { default as Popover } from './popover/Popover';
+export { default as Accordion } from './accordion/Accordion';

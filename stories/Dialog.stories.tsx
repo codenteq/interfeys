@@ -3,7 +3,7 @@ import Dialog from '../src/dialog/Dialog';
 import type { Meta } from '@storybook/react';
 import Button from '../src/button/Button';
 
-const meta = {
+const meta: Meta<typeof Dialog> = {
     title: 'Components/Dialog',
     component: Dialog,
     parameters: {
@@ -19,7 +19,7 @@ const meta = {
     argTypes: {
         isOpen: { control: 'boolean' },
     },
-} satisfies Meta<typeof Dialog>;
+};
 
 export default meta;
 

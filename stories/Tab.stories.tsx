@@ -2,11 +2,11 @@ import React from 'react';
 import type { Meta } from '@storybook/react';
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '../src';
 
-const meta = {
+const meta: Meta<typeof TabGroup> = {
     title: 'Components/Tab',
     component: TabGroup,
     tags: ['autodocs'],
-} satisfies Meta<typeof TabGroup>;
+};
 
 export default meta;
 

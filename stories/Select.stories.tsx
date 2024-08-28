@@ -2,11 +2,11 @@ import React from 'react';
 import Select from '../src/select/Select';
 import type { Meta } from '@storybook/react';
 
-const meta = {
+const meta: Meta<typeof Select> = {
     title: 'Components/Select',
     component: Select,
     tags: ['autodocs'],
-} satisfies Meta<typeof Select>;
+};
 
 export default meta;
 

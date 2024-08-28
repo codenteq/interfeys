@@ -1,14 +1,14 @@
 import InfoCard from '../src/info-card/InfoCard';
 import type { Meta, StoryObj } from '@storybook/react';
 
-const meta = {
+const meta: Meta<typeof InfoCard> = {
     title: 'Components/Info Card',
     component: InfoCard,
     parameters: {
         layout: 'centered',
     },
     tags: ['autodocs'],
-} satisfies Meta<typeof InfoCard>;
+} ;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

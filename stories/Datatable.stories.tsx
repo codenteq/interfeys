@@ -3,11 +3,11 @@ import Datatable from '../src/table/Datatable';
 import type { Meta } from '@storybook/react';
 import { Button } from '../src';
 
-const meta = {
+const meta: Meta<typeof Datatable> = {
     title: 'Components/Datatable',
     component: Datatable,
     tags: ['autodocs'],
-} satisfies Meta<typeof Datatable>;
+};
 
 export default meta;
 

@@ -7,11 +7,11 @@ import {
     AccordionList,
 } from '../src/';
 
-const meta = {
+const meta: Meta<typeof Accordion> = {
     title: 'Components/Accordion',
     component: Accordion,
     tags: ['autodocs'],
-} satisfies Meta<typeof Accordion>;
+};
 
 export default meta;
 

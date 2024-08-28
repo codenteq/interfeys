@@ -3,7 +3,7 @@ import Drawer from '../src/drawer/Drawer';
 import type { Meta } from '@storybook/react';
 import Button from '../src/button/Button';
 
-const meta = {
+const meta: Meta<typeof Drawer> = {
     title: 'Components/Drawer',
     component: Drawer,
     parameters: {
@@ -19,7 +19,7 @@ const meta = {
     argTypes: {
         isOpen: { control: 'boolean' },
     },
-} satisfies Meta<typeof Drawer>;
+};
 
 export default meta;
 

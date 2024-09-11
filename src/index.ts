@@ -12,7 +12,6 @@ export { default as Label } from './label/Label';
 export { default as Modal } from './modal/Modal';
 export { default as Radio } from './radio/Radio';
 export { default as Select } from './select/Select';
-export { default as Carousel } from './carousel/Carousel';
 export { default as Switch } from './switch/Switch';
 export { default as Tab } from './tab-group/Tab';
 export { default as TabGroup } from './tab-group/TabGroup';

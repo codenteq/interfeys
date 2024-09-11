@@ -20,13 +20,25 @@ export function Primary() {
         <>
             <AccordionList>
                 <Accordion>
-                    <AccordionHeader className="text-lg font-medium text-left text-gray-900 dark:text-gray-100">
-                        Toggle me!
-                    </AccordionHeader>
-                    <AccordionBody className="text-gray-700 dark:text-gray-300">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Adipisci architecto debitis earum fuga iusto modi
-                        molestias necessitatibus provident quam! Nisi!
+                    <AccordionHeader>Is it accessible?</AccordionHeader>
+                    <AccordionBody>
+                        {'Yes. It adheres to the WAI-ARIA design pattern.'}
+                    </AccordionBody>
+                </Accordion>
+                <Accordion>
+                    <AccordionHeader>Is it styled?</AccordionHeader>
+                    <AccordionBody>
+                        {
+                            'Yes. It comes with default styles that matches the other components aesthetic.'
+                        }
+                    </AccordionBody>
+                </Accordion>
+                <Accordion>
+                    <AccordionHeader>Is it animated?</AccordionHeader>
+                    <AccordionBody>
+                        {
+                            "Yes. It's animated by default, but you can disable it if you prefer."
+                        }
                     </AccordionBody>
                 </Accordion>
             </AccordionList>

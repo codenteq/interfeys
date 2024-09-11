@@ -98,27 +98,8 @@ export const Search: Story = {
         placeholder: 'Search',
     },
 };
-
-export const Checkbox: Story = {
-    args: {
-        type: 'checkbox',
-    },
-};
-
-export const RangeInput: Story = {
-    args: {
-        type: 'range',
-    },
-};
-
 export const HiddenInput: Story = {
     args: {
         type: 'hidden',
-    },
-};
-
-export const ColorInput: Story = {
-    args: {
-        type: 'color',
     },
 };

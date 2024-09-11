@@ -18,7 +18,6 @@ interface IButtonProps {
     disabled?: boolean;
     isLoading?: boolean;
     loader?: string;
-    label: string;
     variant?: IButtonVariant;
     size?: IButtonSize;
     children: ReactNode;
@@ -51,7 +50,6 @@ export default function Button({
     className,
     isLoading = false,
     loader,
-    label,
     variant = 'default',
     size = 'default',
     children,

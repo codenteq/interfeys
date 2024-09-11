@@ -6,6 +6,7 @@ import React, {
     useState,
 } from 'react';
 import Label from '../label/Label';
+import Button from '../button/Button';
 
 type InputType =
     | 'text'
@@ -21,10 +22,7 @@ type InputType =
     | 'url'
     | 'file'
     | 'search'
-    | 'checkbox'
-    | 'range'
-    | 'hidden'
-    | 'color';
+    | 'hidden';
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
     type: InputType;
@@ -80,16 +78,18 @@ const Input = forwardRef(
                         value={value}
                         onChange={onChange}
                         placeholder={placeholder}
-                        className={`${className} ${disabled ? 'cursor-not-allowed' : ''} transition placeholder:transition caret-brand accent-brand hover:border-zinc-900 dark:hover:border-zinc-300 hover:placeholder:text-zinc-900 dark:hover:placeholder:text-zinc-300 focus:ring-transparent focus:border-zinc-900 dark:focus:border-zinc-300 dark:bg-black text-zinc-900 dark:text-zinc-300 focus:placeholder:text-zinc-900 dark:focus:placeholder:text-zinc-300 rounded-lg p-2.5`}
+                        className={`${className} flex h-10 w-full rounded-md border border-[#d0d7e6] bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-[#6e7781] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1c1c1c] focus-visible:ring-offset-2 dark:border-[#2b2b36] dark:bg-[#1c1c1c] dark:ring-offset-[#1c1c1c] dark:placeholder:text-[#8b99a6] dark:focus-visible:ring-[#a6b6d1] disabled:cursor-not-allowed disabled:opacity-50`}
                         autoFocus={autoFocus}
                         required={required}
                         disabled={disabled}
                         {...props}
                     />
                     {type === 'password' && (
-                        <button
+                        <Button
                             type="button"
-                            className="absolute inset-y-0 right-0 flex items-center px-2"
+                            variant="link"
+                            size="icon"
+                            className="absolute inset-y-0 right-0"
                             onClick={toggleShowPassword}>
                             {showPassword ? (
                                 <svg
@@ -125,14 +125,10 @@ const Input = forwardRef(
                                     />
                                 </svg>
                             )}
-                        </button>
+                        </Button>
                     )}
                 </div>
-                {helpText && (
-                    <div className="block font-medium text-xs text-zinc-700 dark:text-zinc-400 mt-1.5">
-                        {helpText}
-                    </div>
-                )}
+                {helpText && <Label>{helpText}</Label>}
                 {messages.length > 0 && Array.isArray(messages) ? (
                     <>
                         {messages.map((message, index) => (

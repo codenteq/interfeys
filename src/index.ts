@@ -6,7 +6,6 @@ export { default as CardContent } from './card/CardContent';
 export { default as CardDescription } from './card/CardDescription';
 export { default as CardFooter } from './card/CardFooter';
 export { default as CardTitle } from './card/CardTitle';
-export { default as InfoCard } from './info-card/InfoCard';
 export { default as Input } from './input/Input';
 export { default as Label } from './label/Label';
 export { default as Modal } from './modal/Modal';

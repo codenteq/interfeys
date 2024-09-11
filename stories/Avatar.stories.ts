@@ -15,14 +15,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
-        name: 'Avatar',
-        letter: 'A',
+        fallback: 'CT',
     },
 };
 
 export const Secondary: Story = {
     args: {
-        name: 'Avatar',
-        src: 'https://secure.gravatar.com/avatar/074329e344220ee665c78595257cd8c4?s=64&f=y&r=g',
+        src: 'https://secure.gravatar.com/avatar/074329e344220ee665c78595257cd8c4?s=32&d=wavatar&f=y&r=g',
     },
 };

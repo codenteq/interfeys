@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { IBasePaginate } from './IPaginate';
+import Button from '../button/Button';
 
 interface PaginationProps {
     previousPage: () => void;
@@ -35,53 +36,50 @@ export default function Pagination({
                 className="flex justify-between items-center p-3"
                 aria-label="Datatable navigation">
                 <span className="text-sm font-normal text-zinc-500 dark:text-zinc-400">
-                    Gösteriliyor{' '}
-                    <span className="font-semibold text-zinc-900 dark:text-zinc-200">
-                        {meta?.from} {' - '} {meta?.to}
-                    </span>
-                    {' of '}
-                    <span className="font-semibold text-zinc-900 dark:text-zinc-200">
-                        {meta?.total}
-                    </span>
+                    Showing {meta?.from} {' - '} {meta?.to} of {meta?.total}
                 </span>
                 <ul className="list-none inline-flex items-stretch -space-x-px">
                     <li>
-                        <button
-                            onClick={customPrevPage}
-                            className="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-zinc-500 bg-white rounded-l-lg border border-zinc-300 hover:bg-zinc-100 hover:text-zinc-700 dark:bg-zinc-800 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-700 dark:hover:text-white">
-                            <span className="sr-only">Önceki</span>
+                        <Button
+                            type="button"
+                            size="icon"
+                            variant="outline"
+                            onClick={customPrevPage}>
                             <svg
-                                className="w-5 h-5"
-                                aria-hidden="true"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth="1.5"
+                                stroke="currentColor"
+                                className="w-4">
                                 <path
-                                    fillRule="evenodd"
-                                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                    clipRule="evenodd"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M15.75 19.5 8.25 12l7.5-7.5"
                                 />
                             </svg>
-                        </button>
+                        </Button>
                     </li>
                     <li>
-                        <button
-                            onClick={customNextPage}
-                            className="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-zinc-500 bg-white rounded-r-lg border border-zinc-300 hover:bg-zinc-100 hover:text-zinc-700 dark:bg-zinc-800 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-700 dark:hover:text-white">
-                            <span className="sr-only">Sonraki</span>
+                        <Button
+                            type="button"
+                            size="icon"
+                            variant="outline"
+                            onClick={customNextPage}>
                             <svg
-                                className="w-5 h-5"
-                                aria-hidden="true"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth="1.5"
+                                stroke="currentColor"
+                                className="w-4">
                                 <path
-                                    fillRule="evenodd"
-                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                    clipRule="evenodd"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
                                 />
                             </svg>
-                        </button>
+                        </Button>
                     </li>
                 </ul>
             </nav>

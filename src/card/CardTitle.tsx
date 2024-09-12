@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-interface ICardTitleProps extends React.HTMLProps<HTMLDivElement> {
+interface ICardTitleProps extends React.HTMLProps<HTMLHeadingElement> {
     className?: string;
     children: React.ReactNode;
 }

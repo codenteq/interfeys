@@ -40,7 +40,7 @@ export function Primary() {
             </Button>
             {isOpen && (
                 <Drawer>
-                    <DrawerContent>
+                    <DrawerContent onClose={() => setIsOpen(false)}>
                         <DrawerHeader>
                             <DrawerTitle>Are you absolutely sure?</DrawerTitle>
                             <DrawerDescription>

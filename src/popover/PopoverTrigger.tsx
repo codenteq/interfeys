@@ -1,15 +1,15 @@
 import React from 'react';
 
-interface IPopoverProps extends React.HTMLProps<HTMLDivElement> {
+interface IPopoverTriggerProps extends React.HTMLProps<HTMLDivElement> {
     className?: string;
     children: React.ReactNode;
 }
 
-export default function Popover({
+export default function PopoverTrigger({
     className,
     children,
     ...props
-}: IPopoverProps) {
+}: IPopoverTriggerProps) {
     return (
         <div className={className} {...props}>
             {children}

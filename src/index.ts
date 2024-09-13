@@ -31,6 +31,8 @@ export { default as DialogFooter } from './dialog/DialogFooter';
 export { default as DialogHeader } from './dialog/DialogHeader';
 export { default as DialogTitle } from './dialog/DialogTitle';
 export { default as Popover } from './popover/Popover';
+export { default as PopoverContent } from './popover/PopoverContent';
+export { default as PopoverTrigger } from './popover/PopoverTrigger';
 export { default as Accordion } from './accordion/Accordion';
 export { default as AccordionBody } from './accordion/AccordionBody';
 export { default as AccordionHeader } from './accordion/AccordionHeader';

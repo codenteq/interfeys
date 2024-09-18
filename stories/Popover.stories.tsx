@@ -42,41 +42,41 @@ export function Primary() {
                                 Set the dimensions for the layer.
                             </p>
                         </div>
-                        <div className="grid gap-2">
-                            <div className="grid grid-cols-3 items-center gap-4">
+                        <div className="grid gap-4">
+                            <div className="grid grid-cols-3 items-center gap-1">
                                 <Label htmlFor="width">Width</Label>
                                 <Input
                                     type="text"
                                     id="width"
                                     defaultValue="100%"
-                                    className="col-span-2 h-8"
+                                    className="col-span-2 w-full"
                                 />
                             </div>
-                            <div className="grid grid-cols-3 items-center gap-4">
+                            <div className="grid grid-cols-3 items-center gap-1">
                                 <Label htmlFor="maxWidth">Max. width</Label>
                                 <Input
                                     type="text"
                                     id="maxWidth"
                                     defaultValue="300px"
-                                    className="col-span-2 h-8"
+                                    className="col-span-2 w-full"
                                 />
                             </div>
-                            <div className="grid grid-cols-3 items-center gap-4">
+                            <div className="grid grid-cols-3 items-center gap-1">
                                 <Label htmlFor="height">Height</Label>
                                 <Input
                                     type="text"
                                     id="height"
                                     defaultValue="25px"
-                                    className="col-span-2 h-8"
+                                    className="col-span-2 w-full"
                                 />
                             </div>
-                            <div className="grid grid-cols-3 items-center gap-4">
+                            <div className="grid grid-cols-3 items-center gap-1">
                                 <Label htmlFor="maxHeight">Max. height</Label>
                                 <Input
                                     type="text"
                                     id="maxHeight"
                                     defaultValue="none"
-                                    className="col-span-2 h-8"
+                                    className="col-span-2 w-full"
                                 />
                             </div>
                         </div>

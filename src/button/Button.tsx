@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 
 type IButtonType = 'button' | 'submit' | 'reset';
 type IButtonVariant =
@@ -10,12 +10,10 @@ type IButtonVariant =
     | 'link';
 type IButtonSize = 'default' | 'sm' | 'lg' | 'icon';
 
-interface IButtonProps {
-    type: IButtonType;
-    id?: string;
+interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    type?: IButtonType;
     className?: string;
     onClick?: () => void;
-    disabled?: boolean;
     isLoading?: boolean;
     loader?: string;
     variant?: IButtonVariant;
@@ -44,9 +42,7 @@ const sizeClasses = {
 };
 
 export default function Button({
-    type,
-    id,
-    disabled,
+    type = 'button',
     className,
     isLoading = false,
     loader,
@@ -57,29 +53,21 @@ export default function Button({
 }: IButtonProps) {
     return (
         <button
-            id={id}
             type={type}
-            disabled={disabled}
-            className={`${className} ${
-                disabled ? 'cursor-not-allowed opacity-50' : ''
-            } ${variantClasses[variant]} ${sizeClasses[size]}`}
-            {...props}>
+            {...props}
+            className={`${className} ${variantClasses[variant]} ${sizeClasses[size]} disabled:cursor-not-allowed disabled:opacity-50`}>
             {isLoading ? (
                 <div className="inline-flex gap-1">
                     <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        className="bi bi-arrow-clockwise w-4 h-4 self-center animate-spin"
-                        viewBox="0 0 16 16">
-                        <path
-                            fillRule="evenodd"
-                            d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"
-                        />
-                        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                        stroke="currentColor"
+                        fill="none"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                        className="w-4 h-4 self-center animate-spin"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 3a9 9 0 1 0 9 9"></path>
                     </svg>
-                    <span className="text-sm">{loader}</span>
+                    <span>{loader}</span>
                 </div>
             ) : (
                 children

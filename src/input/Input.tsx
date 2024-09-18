@@ -5,7 +5,6 @@ import React, {
     Ref,
     useState,
 } from 'react';
-import Label from '../label/Label';
 import Button from '../button/Button';
 
 type InputType =
@@ -22,38 +21,19 @@ type InputType =
     | 'url'
     | 'file'
     | 'search'
+    | 'checkbox'
     | 'hidden';
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
     type: InputType;
-    value?: string | number;
     className?: string;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-    placeholder?: string;
-    autoFocus?: boolean;
-    required?: boolean;
-    disabled?: boolean;
-    helpText?: string;
-    label?: string;
     messages?: string | string[];
 }
 
 const Input = forwardRef(
     (
-        {
-            className,
-            type,
-            value,
-            onChange,
-            placeholder,
-            autoFocus,
-            required,
-            disabled,
-            helpText,
-            label,
-            messages = [],
-            ...props
-        }: IInputProps,
+        { className, type, onChange, messages = [], ...props }: IInputProps,
         ref: Ref<HTMLInputElement>,
     ) => {
         const [showPassword, setShowPassword] = useState(false);
@@ -64,7 +44,6 @@ const Input = forwardRef(
 
         return (
             <div>
-                {label && <Label>{label}</Label>}
                 <div className="relative">
                     <input
                         ref={ref}
@@ -75,13 +54,8 @@ const Input = forwardRef(
                                   ? 'password'
                                   : 'text'
                         }
-                        value={value}
                         onChange={onChange}
-                        placeholder={placeholder}
-                        className={`${className} flex h-10 w-full rounded-md border border-[#d0d7e6] bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-[#6e7781] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1c1c1c] focus-visible:ring-offset-2 dark:border-[#2b2b36] dark:bg-[#1c1c1c] dark:ring-offset-[#1c1c1c] dark:placeholder:text-[#8b99a6] dark:focus-visible:ring-[#a6b6d1] disabled:cursor-not-allowed disabled:opacity-50`}
-                        autoFocus={autoFocus}
-                        required={required}
-                        disabled={disabled}
+                        className={`${className} transition placeholder:transition focus:ring-transparent file:border-0 file:text-sm file:font-medium rounded-lg p-2.5 caret-[#2b2b36] border-[#d0d7e6] hover:border-[#2b2b36] dark:hover:border-[#2b2b36] hover:placeholder:text-[#6e7781] dark:hover:placeholder:text-[#8b99a6] bg-white dark:bg-[#1c1c1c] text-[#2b2b36] dark:text-[#e9f0ff] focus:border-[#2b2b36] dark:focus:border-[#2b2b36] focus:placeholder:text-[#6e7781] dark:focus:placeholder:text-[#8b99a6] file:text-[#1c1c1c] disabled:cursor-not-allowed disabled:opacity-50`}
                         {...props}
                     />
                     {type === 'password' && (
@@ -128,17 +102,16 @@ const Input = forwardRef(
                         </Button>
                     )}
                 </div>
-                {helpText && <Label>{helpText}</Label>}
                 {messages.length > 0 && Array.isArray(messages) ? (
                     <>
                         {messages.map((message, index) => (
-                            <p className="text-sm text-red-600" key={index}>
+                            <p className="text-sm text-[#f43f5e]" key={index}>
                                 {message}
                             </p>
                         ))}
                     </>
                 ) : (
-                    <p className="text-sm text-red-600">{messages}</p>
+                    <p className="text-sm text-[#f43f5e]">{messages}</p>
                 )}
             </div>
         );

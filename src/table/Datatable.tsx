@@ -56,6 +56,7 @@ export default function Datatable({
                             <div className="w-full">
                                 <Input
                                     type="search"
+                                    className="w-full"
                                     placeholder="Search"
                                     onChange={handleSearch}
                                 />

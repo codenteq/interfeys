@@ -1,6 +1,5 @@
 import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 
-type IButtonType = 'button' | 'submit' | 'reset';
 type IButtonVariant =
     | 'default'
     | 'destructive'
@@ -11,7 +10,6 @@ type IButtonVariant =
 type IButtonSize = 'default' | 'sm' | 'lg' | 'icon';
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    type?: IButtonType;
     className?: string;
     onClick?: () => void;
     isLoading?: boolean;
@@ -42,7 +40,6 @@ const sizeClasses = {
 };
 
 export default function Button({
-    type = 'button',
     className,
     isLoading = false,
     loader,
@@ -53,7 +50,6 @@ export default function Button({
 }: IButtonProps) {
     return (
         <button
-            type={type}
             {...props}
             className={`${className} ${variantClasses[variant]} ${sizeClasses[size]} disabled:cursor-not-allowed disabled:opacity-50`}>
             {isLoading ? (

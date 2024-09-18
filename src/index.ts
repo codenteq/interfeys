@@ -38,4 +38,3 @@ export { default as Accordion } from './accordion/Accordion';
 export { default as AccordionBody } from './accordion/AccordionBody';
 export { default as AccordionHeader } from './accordion/AccordionHeader';
 export { default as AccordionList } from './accordion/AccordionList';
-export { default as Checkbox } from './checkbox/Checkbox';

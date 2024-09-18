@@ -22,6 +22,7 @@ type InputType =
     | 'file'
     | 'search'
     | 'checkbox'
+    | 'radio'
     | 'hidden';
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {

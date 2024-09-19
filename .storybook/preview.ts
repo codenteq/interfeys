@@ -1,24 +1,36 @@
-import type { Preview } from "@storybook/react";
-import "../src/globals.css";
+import type { Preview } from '@storybook/react';
+import { themes } from '@storybook/theming';
+import '../src/globals.css';
 
 const preview: Preview = {
-  parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
-    viewMode: 'docs',
-    options: {
-      storySort: {
-        method: 'react',
-        order: ['Documentation', ['Welcome', '*'], 'Frameworks', 'Components', 'Design System'],
-        locales: 'en-US',
-      },
+    parameters: {
+        darkMode: {
+            classTarget: 'body',
+            darkClass: 'dark',
+            lightClass: 'light',
+            stylePreview: true,
+            dark: themes.dark,
+            light: themes.light,
+        },
+        docs: {
+            theme: themes.dark,
+        },
+        actions: { argTypesRegex: '^on[A-Z].*' },
+        viewMode: 'docs',
+        options: {
+            storySort: {
+                method: 'react',
+                order: ['Get Started', ['Introduction', 'Installation']],
+                locales: 'en-US',
+            },
+        },
+        controls: {
+            matchers: {
+                color: /(background|color)$/i,
+                date: /Date$/i,
+            },
+        },
     },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
-    },
-  },
 };
 
 export default preview;

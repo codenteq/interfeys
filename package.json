@@ -68,6 +68,7 @@
     "framer-motion": "^11.0.8",
     "react": "^18.2.0",
     "react-table": "^7.8.0",
+    "storybook-dark-mode": "^4.0.2",
     "swiper": "^11.0.7"
   }
 }

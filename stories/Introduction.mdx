@@ -1,0 +1,80 @@
+import { Meta } from "@storybook/blocks";
+import {
+    Accordion,
+    AccordionBody,
+    AccordionHeader,
+    AccordionList,
+} from '../src/';
+
+<Meta title="Get Started/Introduction" />
+
+# Introduction
+
+Welcome to the Interfeys documentation!
+
+![Interfeys Design System](https://codenteq.com/wp-content/uploads/2024/08/interfeys.png)
+
+## What is Interfeys?
+
+Interfeys is a UI library for React that helps you build beautiful and accessible user interfaces. Created on top of [Tailwind CSS](https://tailwindcss.com/).
+
+Interfeys primary goal is to streamline the development process, offering a beautiful and adaptable system design for an enhanced user experience.
+
+## FAQ
+
+<AccordionList>
+    <Accordion>
+        <AccordionHeader>Is Interfeys a Vercel related project?</AccordionHeader>
+        <AccordionBody>
+            {'No, Interfeys is an independent community project and is not related to Vercel.'}
+        </AccordionBody>
+    </Accordion>
+    <Accordion>
+        <AccordionHeader>How is Interfeys different from TailwindCSS?</AccordionHeader>
+        <AccordionBody>
+            **TailwindCSS**:
+            Tailwind CSS is a CSS Framework that provides atomic CSS classes to help you style components, leaving you to handle lots of other things like accessibility, component composition, keyboard navigation, style overrides, etc.
+
+            **Interfeys**:
+            Interfeys is a UI library for React that combines the power of TailwindCSS provide complete components (logic and styles) for building accessible and customizable user interfaces. Since Interfeys uses TailwindCSS as its style engine, you can use all TailwindCSS classes within your Interfeys components, ensuring optimal compiled CSS size.
+        </AccordionBody>
+    </Accordion>
+    <Accordion>
+        <AccordionHeader>How is Interfeys different from TailwindCSS components libraries?</AccordionHeader>
+        <AccordionBody>
+            TailwindCSS components libraries such as [TailwindUI](https://tailwindui.com/), [Flowbite](https://flowbite.com/), or [Preline](https://preline.co/), just to name a few, only offer a curated selection of TailwindCSS classes to style your components. They don't provide any React specific components, logic, props, composition, or accessibility features.
+
+            In contrast to these libraries, Interfeys is a complete UI library that provides a set of accessible and customizable components, hooks, and utilities.
+        </AccordionBody>
+    </Accordion>
+    <Accordion>
+        <AccordionHeader>Does Interfeys use runtime CSS?</AccordionHeader>
+        <AccordionBody>
+            No. As Interfeys uses TailwindCSS as its style engine, it generates CSS at build time, eliminating the need for runtime CSS. This means that Interfeys is fully compatible with the latest [React](https://reactjs.org/) and [Next.js](https://nextjs.org/) versions.
+        </AccordionBody>
+    </Accordion>
+    <Accordion>
+        <AccordionHeader>Can I use Interfeys with other front-end frameworks or libraries, such as Vue or Angular?</AccordionHeader>
+        <AccordionBody>
+            No, Interfeys is specifically designed for React as it is built on top of React Vite. However, you can still use the Interfeys components styling part with other frameworks or libraries.
+        </AccordionBody>
+    </Accordion>
+    <Accordion>
+        <AccordionHeader>Why does Interfeys use Framer Motion?</AccordionHeader>
+        <AccordionBody>
+            We use [Framer Motion](https://www.framer.com/motion) to animate some components due to the complexity of the animations and their physics-based nature. Framer Motion allows us to handle these animations in a more straightforward and performant way. In addition, it is well tested and production ready.
+        </AccordionBody>
+    </Accordion>
+</AccordionList>
+
+## Community
+
+We're excited to see the community adopt Interfeys, raise issues, and provide feedback. Whether it's a feature request, bug report, or a project to showcase, please get involved!
+
+- [X (Twitter)](https://x.com/codenteq)
+- [LinkedIn](https://www.linkedin.com/company/codenteq)
+- [Instagram](https://www.instagram.com/codenteq)
+
+## Contributing
+
+PRs on Interfeys are always welcome, please see our [contribution guidelines](https://github.com/codenteq/interfeys/blob/master/CONTRIBUTING.md) to learn how you can contribute to this project.

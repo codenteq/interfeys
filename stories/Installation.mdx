@@ -1,0 +1,32 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Get Started/Installation" />
+
+# Installation
+
+**Requirements**:
+- [React 18](https://reactjs.org/) or later
+- [Tailwind CSS 3.4](https://tailwindcss.com/) or later
+- [Framer Motion 11](https://www.framer.com/motion/) or later
+
+First, install the package:
+```bash
+npm i @codenteq/interfeys
+```
+
+In order for the styles to be applied correctly, you will need to ensure that the path to @codenteq is included in the content field of your `tailwind.config.ts`.
+```typescript
+'./node_modules/@codenteq/**/*.{js,ts,jsx,tsx}'
+```
+
+```typescript
+import { Button } from '@codenteq/interfeys';
+
+export function Primary() {
+    return <Button>Button</Button>;
+}
+```
+
+## Useful Links
+
+* [Codenteq interfeys](https://codenteq.com/interfeys)

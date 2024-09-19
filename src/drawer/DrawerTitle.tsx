@@ -12,7 +12,7 @@ export default function DrawerTitle({
 }: IDrawerTitleProps) {
     return (
         <h3
-            className={`${className} text-lg font-semibold leading-none tracking-tight`}
+            className={`${className} text-lg font-semibold leading-none text-[#1c1c1c] dark:text-[#f2f7ff] tracking-tight`}
             {...props}>
             {children}
         </h3>

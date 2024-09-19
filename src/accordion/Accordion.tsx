@@ -16,7 +16,7 @@ const Accordion = ({ children }: AccordionItemProps) => {
 
     return (
         <AccordionContext.Provider value={{ isOpen, toggle }}>
-            <div className="border-b border-gray-200 dark:border-gray-700">
+            <div className="border-b border-[#e9f0ff] dark:border-[#8b99a6]">
                 {children}
             </div>
         </AccordionContext.Provider>

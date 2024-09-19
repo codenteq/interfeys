@@ -17,7 +17,7 @@ export default function Avatar({
         <div className={className}>
             <div className="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full">
                 {fallback && !src && (
-                    <span className="flex h-full w-full items-center justify-center rounded-full bg-zinc-200 dark:bg-zin-700">
+                    <span className="flex h-full w-full items-center justify-center rounded-full bg-[#e9f0ff] text-[#6e7781] dark:bg-[#2b2b36] dark:text-[#8b99a6]">
                         {fallback}
                     </span>
                 )}

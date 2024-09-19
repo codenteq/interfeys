@@ -25,10 +25,10 @@ const variantClasses = {
     destructive:
         'bg-[#f43f5e] text-[#f2f7ff] hover:bg-[#f43f5e]/90 dark:bg-[#993333] dark:text-[#f2f7ff] dark:hover:bg-[#993333]/90',
     outline:
-        'border border-[#d0d7e6] bg-white hover:bg-[#e9f0ff] hover:text-[#0d0d26] dark:border-[#2b2b36] dark:bg-[#1c1c1c] dark:hover:bg-[#2b2b36] dark:hover:text-[#f2f7ff]',
+        'border border-[#d0d7e6] text-[#0d0d26] dark:text-[#f2f7ff] bg-white hover:bg-[#e9f0ff] hover:text-[#0d0d26] dark:border-[#2b2b36] dark:bg-[#1c1c1c] dark:hover:bg-[#2b2b36] dark:hover:text-[#f2f7ff]',
     secondary:
         'bg-[#e9f0ff] text-[#0d0d26] hover:bg-[#e9f0ff]/80 dark:bg-[#2b2b36] dark:text-[#f2f7ff] dark:hover:bg-[#2b2b36]/80',
-    ghost: 'hover:bg-[#e9f0ff] hover:text-[#0d0d26] dark:hover:bg-[#2b2b36] dark:hover:text-[#f2f7ff]',
+    ghost: 'text-[#0d0d26] dark:text-[#f2f7ff] hover:bg-[#e9f0ff] hover:text-[#0d0d26] dark:hover:bg-[#2b2b36] dark:hover:text-[#f2f7ff]',
     link: 'text-[#0d0d26] dark:text-[#f2f7ff] underline-offset-4 hover:underline',
 };
 

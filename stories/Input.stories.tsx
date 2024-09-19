@@ -54,7 +54,7 @@ export function InputForm() {
             <div>
                 <Label htmlFor="username">Username</Label>
                 <Input id="username" type="text" placeholder="interfeys" />
-                <Label style={{ color: '#6e7781', fontWeight: '400' }}>
+                <Label style={{ color: '#1c1c1c', fontWeight: '400' }}>
                     This is your public display name.
                 </Label>
             </div>

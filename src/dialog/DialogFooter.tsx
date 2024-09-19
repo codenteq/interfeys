@@ -12,7 +12,7 @@ export default function DialogFooter({
 }: IDialogFooterProps) {
     return (
         <div
-            className={`${className}flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2`}
+            className={`${className} flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2`}
             {...props}>
             {children}
         </div>

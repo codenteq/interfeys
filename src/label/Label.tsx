@@ -14,7 +14,7 @@ export default function Label({
 }: ILabelProps) {
     return (
         <label
-            className={`${className} text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70`}
+            className={`${className} text-sm font-medium leading-none text-[#1c1c1c] dark:text-[#f2f7ff] peer-disabled:cursor-not-allowed peer-disabled:opacity-70`}
             htmlFor={htmlFor}
             {...props}>
             {children}

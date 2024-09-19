@@ -15,7 +15,7 @@ const AccordionHeader = ({
     const { isOpen, toggle } = useContext(AccordionContext);
     return (
         <motion.button
-            className={`flex flex-1 items-center justify-between py-4 w-full font-medium transition-all hover:underline ${className}`}
+            className={`flex flex-1 text-[#0d0d26] dark:text-[#f2f7ff] items-center justify-between py-4 w-full font-medium transition-all hover:underline ${className}`}
             onClick={toggle}
             {...props}>
             {children}

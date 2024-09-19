@@ -22,7 +22,9 @@ const AccordionBody = ({
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             style={{ overflow: 'hidden' }}
             {...props}>
-            <div className="pb-4 pt-0 text-sm transition-all">{children}</div>
+            <div className="pb-4 pt-0 text-sm text-[#0d0d26] dark:text-[#f2f7ff] transition-all">
+                {children}
+            </div>
         </motion.div>
     );
 };

@@ -33,7 +33,7 @@ export function SwitchForm() {
                                 Marketing emails
                             </Label>
                             <Label
-                                style={{ color: '#6e7781', fontWeight: '400' }}>
+                                style={{ color: '#1c1c1c', fontWeight: '400' }}>
                                 Receive emails about new products, features, and
                                 more.
                             </Label>
@@ -46,7 +46,7 @@ export function SwitchForm() {
                         <div className="flex flex-col gap-2 space-y-0.5">
                             <Label className="text-base">Security emails</Label>
                             <Label
-                                style={{ color: '#6e7781', fontWeight: '400' }}>
+                                style={{ color: '#1c1c1c', fontWeight: '400' }}>
                                 Receive emails about your account security.
                             </Label>
                         </div>

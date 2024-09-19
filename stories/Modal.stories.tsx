@@ -37,7 +37,7 @@ export function Primary() {
                     title="Edit profile"
                     isOpen={isOpen}
                     setIsOpen={setIsOpen}>
-                    <Label style={{ color: '#6e7781', fontWeight: '400' }}>
+                    <Label style={{ color: '#1c1c1c', fontWeight: '400' }}>
                         {
                             "Make changes to your profile here. Click save when you're done."
                         }

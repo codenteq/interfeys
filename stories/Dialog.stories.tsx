@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import Dialog from '../src/dialog/Dialog';
 import type { Meta } from '@storybook/react';
 import Button from '../src/button/Button';
+import DialogContent from '../src/dialog/DialogContent';
+import DialogHeader from '../src/dialog/DialogHeader';
+import DialogTitle from '../src/dialog/DialogTitle';
+import DialogDescription from '../src/dialog/DialogDescription';
+import DialogFooter from '../src/dialog/DialogFooter';
 
 const meta: Meta<typeof Dialog> = {
     title: 'Components/Dialog',
@@ -17,7 +22,7 @@ const meta: Meta<typeof Dialog> = {
     },
     tags: ['autodocs'],
     argTypes: {
-        isOpen: { control: 'boolean' },
+        open: { control: 'boolean' },
     },
 };
 
@@ -28,17 +33,26 @@ export function Primary() {
 
     return (
         <>
-            <Button
-                onClick={() => setIsOpen(true)}
-                label={'Open Dialog'}
-                type={'button'}
-            />
+            <Button onClick={() => setIsOpen(true)} type={'button'}>
+                Open Dialog
+            </Button>
             {isOpen && (
-                <Dialog isOpen={isOpen} setIsOpen={setIsOpen}>
-                    <h3 className="mb-5">
-                        Are you sure you want to delete this product?
-                    </h3>
-                    <Button type={'button'} label={"Yes, I'm sure"} />
+                <Dialog>
+                    <DialogContent onClose={() => setIsOpen(false)}>
+                        <DialogHeader>
+                            <DialogTitle>Are you absolutely sure?</DialogTitle>
+                            <DialogDescription>
+                                This action cannot be undone. This will
+                                permanently delete your account and remove your
+                                data from our servers.
+                            </DialogDescription>
+                            <DialogFooter>
+                                <Button type="button" className="w-full">
+                                    Mark all as read
+                                </Button>
+                            </DialogFooter>
+                        </DialogHeader>
+                    </DialogContent>
                 </Dialog>
             )}
         </>

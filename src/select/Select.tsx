@@ -1,41 +1,28 @@
 import React, { forwardRef, Ref, SelectHTMLAttributes } from 'react';
-import Label from '../label/Label';
 
 interface ISelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
     children: React.ReactNode;
-    value?: string;
     placeholder?: string;
     className?: string;
-    required?: boolean;
-    disabled?: boolean;
     messages?: string | string[];
-    label?: string;
 }
 
 const Select = forwardRef(
     (
         {
             children,
-            value,
             placeholder,
             className,
-            required,
-            disabled,
             messages = [],
-            label,
             ...props
         }: ISelectProps,
         ref: Ref<HTMLSelectElement>,
     ) => (
         <>
-            {label && <Label>{label}</Label>}
             <select
                 ref={ref}
-                value={value}
-                className={`${className} ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'} w-full text-sm transition placeholder-transition hover:border-zinc-900 dark:hover:border-zinc-300 hover:placeholder-text-zinc-900 dark:hover:placeholder-text-zinc-300 focus:ring-transparent focus:border-zinc-900 dark:focus:border-zinc-300 bg-white dark:bg-black text-zinc-900 dark:text-zinc-300 focus:placeholder-text-zinc-900 dark:focus:placeholder-text-zinc-300 rounded-lg p-3`}
-                disabled={disabled}
-                required={required}
-                {...props}>
+                {...props}
+                className={`${className} transition placeholder:transition focus:ring-transparent file:border-0 file:text-sm file:font-medium rounded-lg p-2.5 border-[#d0d7e6] hover:border-[#2b2b36] dark:hover:border-[#2b2b36] hover:placeholder:text-[#6e7781] dark:hover:placeholder:text-[#8b99a6] bg-white dark:bg-[#1c1c1c] text-[#2b2b36] dark:text-[#e9f0ff] focus:border-[#2b2b36] dark:focus:border-[#2b2b36] focus:placeholder:text-[#6e7781] dark:focus:placeholder:text-[#8b99a6] file:text-[#1c1c1c] disabled:cursor-not-allowed disabled:opacity-50`}>
                 {placeholder && (
                     <option disabled selected>
                         {placeholder}

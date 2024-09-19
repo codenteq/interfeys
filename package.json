@@ -1,6 +1,6 @@
 {
   "name": "@codenteq/interfeys",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Codenteq Interfeys Design System",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
@@ -64,9 +64,11 @@
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.7",
+    "clsx": "^2.1.1",
     "framer-motion": "^11.0.8",
     "react": "^18.2.0",
     "react-table": "^7.8.0",
+    "storybook-dark-mode": "^4.0.2",
     "swiper": "^11.0.7"
   }
 }

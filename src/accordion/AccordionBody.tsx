@@ -7,15 +7,22 @@ interface AccordionBodyProps {
     className?: string;
 }
 
-const AccordionBody = ({ children, className }: AccordionBodyProps) => {
+const AccordionBody = ({
+    children,
+    className,
+    ...props
+}: AccordionBodyProps) => {
     const { isOpen } = useContext(AccordionContext);
+
     return (
         <motion.div
-            className={`${className} ${isOpen ? 'block' : 'hidden'}`}
-            initial={{ height: 0 }}
-            animate={{ height: isOpen ? 'auto' : 0 }}
-            transition={{ duration: 0.3 }}>
-            <div className={`py-5 ${isOpen ? 'block' : 'hidden'}`}>
+            className={className}
+            initial={false}
+            animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            style={{ overflow: 'hidden' }}
+            {...props}>
+            <div className="pb-4 pt-0 text-sm text-[#0d0d26] dark:text-[#f2f7ff] transition-all">
                 {children}
             </div>
         </motion.div>

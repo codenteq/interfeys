@@ -7,31 +7,32 @@ interface AccordionHeaderProps {
     className?: string;
 }
 
-const AccordionHeader = ({ children, className }: AccordionHeaderProps) => {
+const AccordionHeader = ({
+    children,
+    className,
+    ...props
+}: AccordionHeaderProps) => {
     const { isOpen, toggle } = useContext(AccordionContext);
     return (
-        <div className="border-b border-gray-200 dark:border-gray-700">
-            <motion.button
-                type="button"
-                className={`flex items-center justify-between w-full py-5 ${className}`}
-                onClick={toggle}>
-                {children}
-                <svg
-                    className={`w-3 h-3 transform ${isOpen ? 'rotate-180' : ''}`}
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 10 6">
-                    <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M9 5L5 1 1 5"
-                    />
-                </svg>
-            </motion.button>
-        </div>
+        <motion.button
+            className={`flex flex-1 text-[#0d0d26] dark:text-[#f2f7ff] items-center justify-between py-4 w-full font-medium transition-all hover:underline ${className}`}
+            onClick={toggle}
+            {...props}>
+            {children}
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className={`h-4 w-4 shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}>
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+            </svg>
+        </motion.button>
     );
 };
 

@@ -1,17 +1,17 @@
 import React from 'react';
 
-interface TabPanelProps {
+interface IPopoverTriggerProps extends React.HTMLProps<HTMLDivElement> {
     className?: string;
     children: React.ReactNode;
 }
 
-export default function TabPanel({
+export default function PopoverTrigger({
     className,
     children,
     ...props
-}: TabPanelProps) {
+}: IPopoverTriggerProps) {
     return (
-        <div className={`${className} w-full mt-4`} {...props}>
+        <div className={className} {...props}>
             {children}
         </div>
     );

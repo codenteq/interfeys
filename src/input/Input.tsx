@@ -5,7 +5,7 @@ import React, {
     Ref,
     useState,
 } from 'react';
-import Label from '../label/Label';
+import Button from '../button/Button';
 
 type InputType =
     | 'text'
@@ -22,40 +22,19 @@ type InputType =
     | 'file'
     | 'search'
     | 'checkbox'
-    | 'range'
-    | 'hidden'
-    | 'color';
+    | 'radio'
+    | 'hidden';
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
     type: InputType;
-    value?: string | number;
     className?: string;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-    placeholder?: string;
-    autoFocus?: boolean;
-    required?: boolean;
-    disabled?: boolean;
-    helpText?: string;
-    label?: string;
     messages?: string | string[];
 }
 
 const Input = forwardRef(
     (
-        {
-            className,
-            type,
-            value,
-            onChange,
-            placeholder,
-            autoFocus,
-            required,
-            disabled,
-            helpText,
-            label,
-            messages = [],
-            ...props
-        }: IInputProps,
+        { className, type, onChange, messages = [], ...props }: IInputProps,
         ref: Ref<HTMLInputElement>,
     ) => {
         const [showPassword, setShowPassword] = useState(false);
@@ -66,7 +45,6 @@ const Input = forwardRef(
 
         return (
             <div>
-                {label && <Label>{label}</Label>}
                 <div className="relative">
                     <input
                         ref={ref}
@@ -77,19 +55,16 @@ const Input = forwardRef(
                                   ? 'password'
                                   : 'text'
                         }
-                        value={value}
                         onChange={onChange}
-                        placeholder={placeholder}
-                        className={`${className} ${disabled ? 'cursor-not-allowed' : ''} transition placeholder:transition caret-brand accent-brand hover:border-zinc-900 dark:hover:border-zinc-300 hover:placeholder:text-zinc-900 dark:hover:placeholder:text-zinc-300 focus:ring-transparent focus:border-zinc-900 dark:focus:border-zinc-300 dark:bg-black text-zinc-900 dark:text-zinc-300 focus:placeholder:text-zinc-900 dark:focus:placeholder:text-zinc-300 rounded-lg p-2.5`}
-                        autoFocus={autoFocus}
-                        required={required}
-                        disabled={disabled}
+                        className={`${className} w-full transition placeholder:transition focus:ring-transparent file:border-0 file:text-sm file:font-medium rounded-lg p-2.5 caret-[#2b2b36] dark:caret-[#f2f7ff] border-[#d0d7e6] hover:border-[#2b2b36] dark:hover:border-[#2b2b36] hover:placeholder:text-[#6e7781] dark:hover:placeholder:text-[#8b99a6] bg-white dark:bg-[#1c1c1c] text-[#2b2b36] dark:text-[#e9f0ff] focus:border-[#2b2b36] dark:focus:border-[#2b2b36] focus:placeholder:text-[#6e7781] dark:focus:placeholder:text-[#8b99a6] file:text-[#1c1c1c] disabled:cursor-not-allowed disabled:opacity-50`}
                         {...props}
                     />
                     {type === 'password' && (
-                        <button
+                        <Button
                             type="button"
-                            className="absolute inset-y-0 right-0 flex items-center px-2"
+                            variant="link"
+                            size="icon"
+                            className="absolute inset-y-0 right-0"
                             onClick={toggleShowPassword}>
                             {showPassword ? (
                                 <svg
@@ -125,24 +100,19 @@ const Input = forwardRef(
                                     />
                                 </svg>
                             )}
-                        </button>
+                        </Button>
                     )}
                 </div>
-                {helpText && (
-                    <div className="block font-medium text-xs text-zinc-700 dark:text-zinc-400 mt-1.5">
-                        {helpText}
-                    </div>
-                )}
                 {messages.length > 0 && Array.isArray(messages) ? (
                     <>
                         {messages.map((message, index) => (
-                            <p className="text-sm text-red-600" key={index}>
+                            <p className="text-sm text-[#f43f5e]" key={index}>
                                 {message}
                             </p>
                         ))}
                     </>
                 ) : (
-                    <p className="text-sm text-red-600">{messages}</p>
+                    <p className="text-sm text-[#f43f5e]">{messages}</p>
                 )}
             </div>
         );

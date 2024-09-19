@@ -62,7 +62,9 @@ export function Primary() {
                 meta={meta}
                 isLoading={false}
                 tableTopRightHeader={
-                    <Button type={'button'} label={'Primary Button'} />
+                    <Button type={'button'} variant="outline">
+                        Button
+                    </Button>
                 }
                 setSearch={setSearch}
             />

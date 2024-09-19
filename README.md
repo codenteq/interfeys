@@ -34,10 +34,11 @@ In order for the styles to be applied correctly, you will need to ensure that th
 ```
 
 ```typescript
-<Button
-  type={'button'}
-  label={'Interfeys works!'}
-/>
+import { Button } from '@codenteq/interfeys';
+
+export function Primary() {
+    return <Button>Interfeys works!</Button>;
+}
 ```
 
 ## How to contribute

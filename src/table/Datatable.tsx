@@ -104,7 +104,7 @@ export default function Datatable({
                                             <td key={key}>
                                                 <div
                                                     role="status"
-                                                    className="w-full p-4 rounded animate-pulse p-6">
+                                                    className="w-full p-4 rounded animate-pulse">
                                                     <div className="flex items-center justify-between">
                                                         <div>
                                                             <div className="h-2.5 bg-zinc-300 rounded-full dark:bg-zinc-600 w-24 mb-2.5" />

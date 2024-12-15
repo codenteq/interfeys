@@ -1,4 +1,5 @@
 import * as React from 'react';
+import clsx from 'clsx';
 
 interface ICardDescriptionProps extends React.HTMLProps<HTMLParagraphElement> {
     className?: string;
@@ -12,7 +13,10 @@ export default function CardDescription({
 }: ICardDescriptionProps) {
     return (
         <p
-            className={`${className} text-sm text-[#6e7781] dark:text-[#8b99a6]`}
+            className={clsx(
+                className,
+                'text-sm text-[#6e7781] dark:text-[#8b99a6]',
+            )}
             {...prop}>
             {children}
         </p>

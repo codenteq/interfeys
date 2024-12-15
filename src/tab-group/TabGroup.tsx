@@ -15,7 +15,7 @@ export default function TabGroup({
     const [activeIndex, setActiveIndex] = useState(defaultIndex);
 
     return (
-        <div className={`${className}`} {...props}>
+        <div className={className} {...props}>
             {React.Children.map(children, child =>
                 React.cloneElement(child as React.ReactElement<any>, {
                     activeIndex,

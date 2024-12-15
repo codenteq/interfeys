@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Datatable from '../src/table/Datatable';
 import type { Meta } from '@storybook/react';
-import { Button } from '../src';
+import { Button, Datatable } from '../src';
 
 const meta: Meta<typeof Datatable> = {
     title: 'Components/Datatable',
@@ -61,11 +60,7 @@ export function Primary() {
                 setPagePaginate={setPagePaginate}
                 meta={meta}
                 isLoading={false}
-                tableTopRightHeader={
-                    <Button type={'button'} variant="outline">
-                        Button
-                    </Button>
-                }
+                tableTopRightHeader={<Button>Button</Button>}
                 setSearch={setSearch}
             />
         </>

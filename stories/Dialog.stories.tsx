@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import Dialog from '../src/dialog/Dialog';
 import type { Meta } from '@storybook/react';
-import Button from '../src/button/Button';
-import DialogContent from '../src/dialog/DialogContent';
-import DialogHeader from '../src/dialog/DialogHeader';
-import DialogTitle from '../src/dialog/DialogTitle';
-import DialogDescription from '../src/dialog/DialogDescription';
-import DialogFooter from '../src/dialog/DialogFooter';
+import {
+    Button,
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+} from '../src';
 
 const meta: Meta<typeof Dialog> = {
     title: 'Components/Dialog',
@@ -33,7 +35,7 @@ export function Primary() {
 
     return (
         <>
-            <Button onClick={() => setIsOpen(true)} type={'button'}>
+            <Button onClick={() => setIsOpen(true)} variant="primary">
                 Open Dialog
             </Button>
             {isOpen && (

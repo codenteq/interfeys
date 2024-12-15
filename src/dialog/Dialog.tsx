@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import clsx from 'clsx';
 
 interface IDialogProps extends React.HTMLProps<HTMLDivElement> {
     className?: string;
@@ -18,7 +19,10 @@ export default function Dialog({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}>
             <div
-                className={`${className} fixed inset-0 backdrop-blur-sm bg-black bg-opacity-30 z-50`}
+                className={clsx(
+                    className,
+                    'fixed inset-0 backdrop-blur-sm bg-black bg-opacity-30 z-50',
+                )}
                 {...props}>
                 {children}
             </div>

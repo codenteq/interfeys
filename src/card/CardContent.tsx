@@ -1,4 +1,5 @@
 import * as React from 'react';
+import clsx from 'clsx';
 
 interface ICardContentProps extends React.HTMLProps<HTMLDivElement> {
     className?: string;
@@ -11,7 +12,7 @@ export default function CardContent({
     ...prop
 }: ICardContentProps) {
     return (
-        <div className={`${className} p-6 pt-0`} {...prop}>
+        <div className={clsx(className, 'p-6 pt-0')} {...prop}>
             {children}
         </div>
     );

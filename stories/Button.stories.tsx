@@ -13,8 +13,12 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 
-export function Primary() {
+export function Default() {
     return <Button>Button</Button>;
+}
+
+export function ButtonPrimary() {
+    return <Button variant="primary">Button</Button>;
 }
 
 export function ButtonSecondary() {

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Button from '../button/Button';
+import clsx from 'clsx';
 
 interface IModalProps {
     children: React.ReactNode;
@@ -54,30 +56,36 @@ export default function Modal({
                             exit={{ scale: 0.8, opacity: 0 }}
                             key="modal"
                             transition={{ duration: 0.3, ease: 'easeInOut' }}
-                            className="relative w-full h-full overflow-auto bg-white dark:bg-black border border-brand md:rounded-lg">
-                            <div className="flex items-start justify-between p-4 border-b border-zinc-100 dark:border-zinc-900 rounded-t">
+                            className="relative w-full h-full overflow-auto bg-white dark:bg-black border border-[#e4e4e7] dark:border-[#27272a] md:rounded-lg">
+                            <div className="flex items-center justify-between p-4 border-b border-zinc-100 dark:border-zinc-900 rounded-t">
                                 <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
                                     {title}
                                 </h3>
-                                <motion.button
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    transition={{ delay: 0.2 }}
-                                    onClick={onClose}
-                                    className="bg-transparent p-1.5 hover:bg-zinc-200 hover:dark:bg-zinc-800 rounded-full duration-200">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        fill="currentColor"
-                                        className="bi bi-x-lg w-5 h-5 text-zinc-700 dark:text-zinc-400"
-                                        viewBox="0 0 16 16">
-                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-                                    </svg>
-                                </motion.button>
+                                <div className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-[#1c1c1c] focus:ring-offset-2 disabled:pointer-events-none bg-[#e9f0ff] text-[#6e7781]">
+                                    <Button
+                                        className="w-5 h-5"
+                                        type="button"
+                                        size="icon"
+                                        variant="outline"
+                                        onClick={onClose}>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            strokeWidth="1.5"
+                                            stroke="currentColor"
+                                            className="w-5">
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                d="M6 18 18 6M6 6l12 12"
+                                            />
+                                        </svg>
+                                    </Button>
+                                    <span className="sr-only">Close</span>
+                                </div>
                             </div>
-                            <div className={`${className} p-6 space-y-6`}>
+                            <div className={clsx(className, 'p-6 space-y-6')}>
                                 {children}
                             </div>
                         </motion.div>

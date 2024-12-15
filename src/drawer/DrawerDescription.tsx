@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 
 interface IDrawerDescriptionProps
     extends React.HTMLProps<HTMLParagraphElement> {
@@ -13,7 +14,10 @@ export default function DrawerDescription({
 }: IDrawerDescriptionProps) {
     return (
         <p
-            className={`${className} text-sm text-[#6e7781] dark:text-[#8b99a6]`}
+            className={clsx(
+                className,
+                'text-sm text-[#6e7781] dark:text-[#8b99a6]',
+            )}
             {...props}>
             {children}
         </p>

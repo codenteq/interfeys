@@ -1,4 +1,5 @@
 import * as React from 'react';
+import clsx from 'clsx';
 
 interface ICardHeaderProps extends React.HTMLProps<HTMLDivElement> {
     className?: string;
@@ -11,7 +12,9 @@ export default function CardHeader({
     ...prop
 }: ICardHeaderProps) {
     return (
-        <div className={`${className} flex flex-col space-y-1.5 p-6`} {...prop}>
+        <div
+            className={clsx(className, 'flex flex-col space-y-1.5 p-6')}
+            {...prop}>
             {children}
         </div>
     );

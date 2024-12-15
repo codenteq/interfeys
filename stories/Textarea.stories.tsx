@@ -30,15 +30,9 @@ export function TextareaWithLabel() {
 export function TextareaWithText() {
     return (
         <div className="grid w-full gap-1.5">
-            <Label
-                style={{ color: '#1c1c1c', fontWeight: '400' }}
-                htmlFor="message-2">
-                Your Message
-            </Label>
+            <Label htmlFor="message-2">Your Message</Label>
             <Textarea placeholder="Type your message here." id="message-2" />
-            <Label style={{ color: '#1c1c1c', fontWeight: '400' }}>
-                Your message will be copied to the support team.
-            </Label>
+            <Label>Your message will be copied to the support team.</Label>
         </div>
     );
 }
@@ -61,7 +55,7 @@ export function TextareaForm() {
                     placeholder="Tell us a little bit about yourself"
                     className="resize-none"
                 />
-                <Label style={{ color: '#1c1c1c', fontWeight: '400' }}>
+                <Label>
                     You can <span>@codenteq</span> other users and
                     organizations.
                 </Label>

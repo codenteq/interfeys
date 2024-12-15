@@ -1,7 +1,9 @@
 import React, { ButtonHTMLAttributes, ReactNode } from 'react';
+import clsx from 'clsx';
 
 type IButtonVariant =
     | 'default'
+    | 'primary'
     | 'destructive'
     | 'outline'
     | 'secondary'
@@ -21,6 +23,8 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantClasses = {
     default:
+        'dark:text-[#fff] text-[#18181b] bg-inherit hover:bg-[#0c6ba8] hover:text-[#fff] border border-[#0c6ba8] transition-all',
+    primary:
         'bg-[#0d0d26] text-[#f2f7ff] hover:bg-[#0d0d26]/90 dark:bg-[#f2f7ff] dark:text-[#0d0d26] dark:hover:bg-[#f2f7ff]/90',
     destructive:
         'bg-[#f43f5e] text-[#f2f7ff] hover:bg-[#f43f5e]/90 dark:bg-[#993333] dark:text-[#f2f7ff] dark:hover:bg-[#993333]/90',
@@ -42,7 +46,7 @@ const sizeClasses = {
 export default function Button({
     className,
     isLoading = false,
-    loader,
+    loader = 'Loading...',
     variant = 'default',
     size = 'default',
     children,
@@ -51,7 +55,12 @@ export default function Button({
     return (
         <button
             {...props}
-            className={`${className} ${variantClasses[variant]} ${sizeClasses[size]} disabled:cursor-not-allowed disabled:opacity-50`}>
+            className={clsx(
+                className,
+                variantClasses[variant],
+                sizeClasses[size],
+                'disabled:cursor-not-allowed disabled:opacity-50',
+            )}>
             {isLoading ? (
                 <div className="inline-flex gap-1">
                     <svg

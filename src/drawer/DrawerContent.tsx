@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import clsx from 'clsx';
 
 interface IDrawerContentProps extends React.HTMLProps<HTMLDivElement> {
     className?: string;
@@ -49,7 +50,10 @@ export default function DrawerContent({
         <motion.div>
             <div
                 ref={dialogRef}
-                className={`${className} fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-white dark:bg-[#1c1c1c]`}
+                className={clsx(
+                    className,
+                    'fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border-t border-[#e4e4e7] dark:border-[#27272a] bg-white dark:bg-black',
+                )}
                 {...props}>
                 <div
                     onClick={onClose}

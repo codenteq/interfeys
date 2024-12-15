@@ -5,7 +5,6 @@ import Button from '../button/Button';
 interface PaginationProps {
     previousPage: () => void;
     nextPage: () => void;
-    // eslint-disable-next-line no-unused-vars
     setPagePaginate: (page: number) => void;
     pagePaginate: number;
     meta: IBasePaginate;

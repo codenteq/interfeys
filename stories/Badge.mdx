@@ -1,0 +1,46 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as BadgeStories from './Badge.stories';
+
+<Meta of={BadgeStories} />
+
+# Badge
+
+Displays a badge or a component that looks like a badge.
+
+<Canvas of={BadgeStories.Default} />
+
+## Installation
+
+```bash
+npm i @codenteq/interfeys
+```
+
+In order for the styles to be applied correctly, you will need to ensure that the path to @codenteq is included in the content field of your `tailwind.config.ts`.
+```typescript
+'./node_modules/@codenteq/**/*.{js,ts,jsx,tsx}'
+```
+
+## Usage
+
+```typescript
+import { Badge } from '@codenteq/interfeys';
+```
+
+```typescript
+<Badge variant="outline">Badge</Badge>
+```
+
+## Examples
+
+### Default
+<Canvas of={BadgeStories.Default} />
+
+### Secondary
+<Canvas of={BadgeStories.Secondary} />
+
+### Outline
+<Canvas of={BadgeStories.Outline} />
+
+### Destructive
+<Canvas of={BadgeStories.Destructive} />

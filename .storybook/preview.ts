@@ -15,7 +15,6 @@ const preview: Preview = {
         docs: {
             theme: themes.dark,
         },
-        actions: { argTypesRegex: '^on[A-Z].*' },
         viewMode: 'docs',
         options: {
             storySort: {
@@ -30,6 +29,7 @@ const preview: Preview = {
                 date: /Date$/i,
             },
         },
+        tags: ['autodocs'],
     },
 };
 

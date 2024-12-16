@@ -1,0 +1,64 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+Displays a button or a component that looks like a button.
+
+<Canvas of={ButtonStories.Default} />
+
+## Installation
+
+```bash
+npm i @codenteq/interfeys
+```
+
+In order for the styles to be applied correctly, you will need to ensure that the path to @codenteq is included in the content field of your `tailwind.config.ts`.
+```typescript
+'./node_modules/@codenteq/**/*.{js,ts,jsx,tsx}'
+```
+
+## Usage
+
+```typescript
+import { Button } from '@codenteq/interfeys';
+```
+
+```typescript
+<Button variant="outline">Button</Button>
+```
+
+## Examples
+
+### Default
+<Canvas of={ButtonStories.Default} />
+
+### Primary
+<Canvas of={ButtonStories.ButtonPrimary} />
+
+### Secondary
+<Canvas of={ButtonStories.ButtonSecondary} />
+
+### Destructive
+<Canvas of={ButtonStories.ButtonDestructive} />
+
+### Outline
+<Canvas of={ButtonStories.ButtonOutline} />
+
+### Ghost
+<Canvas of={ButtonStories.ButtonGhost} />
+
+### Link
+<Canvas of={ButtonStories.ButtonLink} />
+
+### Icon
+<Canvas of={ButtonStories.ButtonIcon} />
+
+### With Icon
+<Canvas of={ButtonStories.ButtonWithIcon} />
+
+### Loading
+<Canvas of={ButtonStories.ButtonLoading} />

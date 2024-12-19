@@ -1,9 +1,10 @@
 import React from 'react';
+import clsx from 'clsx';
 
 interface TabPanelsProps {
     className?: string;
     children: React.ReactNode;
-    activeIndex: number;
+    activeIndex?: number;
 }
 
 export default function TabPanels({
@@ -13,7 +14,7 @@ export default function TabPanels({
     ...props
 }: TabPanelsProps) {
     return (
-        <div className={`${className} mt-2`} {...props}>
+        <div className={clsx(className, 'mt-2')} {...props}>
             {React.Children.map(children, (child, index) =>
                 activeIndex === index ? child : null,
             )}

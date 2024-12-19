@@ -16,6 +16,7 @@ import {
     TabPanel,
     TabPanels,
 } from '../src';
+
 const meta: Meta<typeof TabGroup> = {
     title: 'Components/Tab',
     component: TabGroup,

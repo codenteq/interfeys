@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import Modal from '../src/modal/Modal';
 import type { Meta } from '@storybook/react';
-import Button from '../src/button/Button';
-import { Label, Input } from '../src';
+import { Label, Input, Modal, Button } from '../src';
 
 const meta: Meta<typeof Modal> = {
     title: 'Components/Modal',
@@ -31,13 +29,15 @@ export function Primary() {
 
     return (
         <>
-            <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
+            <Button onClick={() => setIsOpen(true)} variant="primary">
+                Open Modal
+            </Button>
             {isOpen && (
                 <Modal
                     title="Edit profile"
                     isOpen={isOpen}
                     setIsOpen={setIsOpen}>
-                    <Label style={{ color: '#1c1c1c', fontWeight: '400' }}>
+                    <Label>
                         {
                             "Make changes to your profile here. Click save when you're done."
                         }
@@ -48,8 +48,7 @@ export function Primary() {
                             <Input
                                 type="email"
                                 id="email"
-                                className="w-full"
-                                defaultValue="codenteq@example.com"
+                                defaultValue="codenteq@codenteq.com"
                             />
                         </div>
                         <div className="grid gap-2">
@@ -57,11 +56,13 @@ export function Primary() {
                             <Input
                                 type="text"
                                 id="username"
-                                className="w-full"
                                 defaultValue="@codenteq"
                             />
                         </div>
-                        <Button type="submit">Save changes</Button>
+                        <div className="flex justify-end gap-2">
+                            <Button>Save changes</Button>
+                            <Button variant="destructive">Cancel</Button>
+                        </div>
                     </form>
                 </Modal>
             )}

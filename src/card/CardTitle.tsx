@@ -1,4 +1,5 @@
 import * as React from 'react';
+import clsx from 'clsx';
 
 interface ICardTitleProps extends React.HTMLProps<HTMLHeadingElement> {
     className?: string;
@@ -12,7 +13,10 @@ export default function CardTitle({
 }: ICardTitleProps) {
     return (
         <h3
-            className={`${className} text-2xl font-semibold leading-none tracking-tight`}
+            className={clsx(
+                className,
+                'text-2xl font-semibold leading-none tracking-tight',
+            )}
             {...prop}>
             {children}
         </h3>

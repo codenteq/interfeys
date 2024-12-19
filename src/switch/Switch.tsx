@@ -4,6 +4,7 @@ import React, {
     InputHTMLAttributes,
     Ref,
 } from 'react';
+import clsx from 'clsx';
 
 interface ISwitchProps extends InputHTMLAttributes<HTMLInputElement> {
     className?: string;
@@ -22,10 +23,10 @@ const Switch = forwardRef(
                     ref={ref}
                     type={'checkbox'}
                     onChange={onChange}
-                    className={`${className} sr-only peer`}
+                    className={clsx(className, 'sr-only peer')}
                     {...props}
                 />
-                <div className="w-11 h-6 bg-[#0d0d26] rounded-full peer dark:bg-[#2b2b36] peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-[#ffffff] dark:after:bg-[#1c1c1c] after:border-zinc-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-zinc-600 peer-checked:bg-[#d0d7e6] dark:peer-checked:bg-[#0d0d26] cursor-pointer disabled:cursor-not-allowed disabled:opacity-50" />
+                <div className="w-11 h-6 bg-zinc-300 rounded-full peer dark:bg-zinc-900 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-[#ffffff] dark:after:bg-[#1c1c1c] peer-checked:dark:after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-zinc-600 peer-checked:bg-brand cursor-pointer disabled:cursor-not-allowed disabled:opacity-50" />
             </label>
             {messages.length > 0 && Array.isArray(messages) ? (
                 <>

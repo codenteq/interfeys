@@ -1,0 +1,44 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as AccordionStories from './Accordion.stories';
+
+<Meta of={AccordionStories} />
+
+# Accordion
+
+A vertically stacked set of interactive headings that each reveal a section of content.
+
+<Canvas of={AccordionStories.Primary} />
+
+## Installation
+
+```bash
+npm i @codenteq/interfeys
+```
+
+In order for the styles to be applied correctly, you will need to ensure that the path to @codenteq is included in the content field of your `tailwind.config.ts`.
+```typescript
+'./node_modules/@codenteq/**/*.{js,ts,jsx,tsx}'
+```
+
+## Usage
+
+```typescript
+import {
+    Accordion,
+    AccordionBody,
+    AccordionHeader,
+    AccordionList,
+} from '@codenteq/interfeys';
+```
+
+```typescript
+<AccordionList>
+  <Accordion>
+    <AccordionHeader>Is it accessible?</AccordionHeader>
+    <AccordionBody>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </AccordionBody>
+  </Accordion>
+</AccordionList>
+```

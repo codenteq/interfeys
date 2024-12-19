@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import clsx from 'clsx';
 
 interface IDrawerProps extends React.HTMLProps<HTMLDivElement> {
     className?: string;
@@ -18,7 +19,10 @@ export default function Drawer({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}>
             <div
-                className={`${className} fixed inset-0 z-50 backdrop-blur-sm bg-black/50`}
+                className={clsx(
+                    className,
+                    'fixed inset-0 z-50 backdrop-blur-sm bg-black/50',
+                )}
                 {...props}>
                 {children}
             </div>

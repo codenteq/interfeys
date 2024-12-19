@@ -1,4 +1,5 @@
 import * as React from 'react';
+import clsx from 'clsx';
 
 interface ICardFooterProps extends React.HTMLProps<HTMLDivElement> {
     className?: string;
@@ -11,7 +12,9 @@ export default function CardFooter({
     ...prop
 }: ICardFooterProps) {
     return (
-        <div className={`${className} flex items-center p-6 pt-0`} {...prop}>
+        <div
+            className={clsx(className, 'flex items-center p-6 pt-0')}
+            {...prop}>
             {children}
         </div>
     );

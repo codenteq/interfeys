@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 
 interface IDialogTitleProps extends React.HTMLProps<HTMLHeadingElement> {
     className?: string;
@@ -12,7 +13,10 @@ export default function DialogTitle({
 }: IDialogTitleProps) {
     return (
         <h3
-            className={`${className} text-lg font-semibold leading-none text-[#1c1c1c] dark:text-[#f2f7ff] tracking-tight`}
+            className={clsx(
+                className,
+                'text-lg font-semibold leading-none text-[#1c1c1c] dark:text-[#f2f7ff] tracking-tight',
+            )}
             {...props}>
             {children}
         </h3>

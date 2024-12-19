@@ -1,4 +1,5 @@
 import * as React from 'react';
+import clsx from 'clsx';
 
 interface ICardProps extends React.HTMLProps<HTMLDivElement> {
     className?: string;
@@ -8,7 +9,10 @@ interface ICardProps extends React.HTMLProps<HTMLDivElement> {
 export default function Card({ className, children, ...prop }: ICardProps) {
     return (
         <div
-            className={`${className} rounded-lg border bg-white text-[#1c1c1c] dark:bg-[#1c1c1c] dark:text-[#f2f7ff] shadow-sm`}
+            className={clsx(
+                className,
+                'rounded-lg border border-[#e4e4e7] dark:border-[#27272a] bg-white text-[#18181b] dark:bg-black dark:text-white shadow-sm',
+            )}
             {...prop}>
             {children}
         </div>

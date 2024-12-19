@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 
 interface IDialogHeaderProps extends React.HTMLProps<HTMLDivElement> {
     className?: string;
@@ -12,7 +13,10 @@ export default function DialogHeader({
 }: IDialogHeaderProps) {
     return (
         <div
-            className={`${className} flex flex-col space-y-1.5 text-center sm:text-left`}
+            className={clsx(
+                className,
+                'flex flex-col space-y-1.5 text-center sm:text-left',
+            )}
             {...props}>
             {children}
         </div>

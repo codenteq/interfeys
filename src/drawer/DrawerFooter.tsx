@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 
 interface IDrawerFooterProps extends React.HTMLProps<HTMLDivElement> {
     className?: string;
@@ -12,7 +13,7 @@ export default function DrawerFooter({
 }: IDrawerFooterProps) {
     return (
         <div
-            className={`${className} mt-auto flex flex-col gap-2 p-4`}
+            className={clsx(className, 'mt-auto flex flex-col gap-2 p-4')}
             {...props}>
             {children}
         </div>

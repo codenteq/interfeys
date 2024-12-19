@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 
 interface IDialogFooterProps extends React.HTMLProps<HTMLDivElement> {
     className?: string;
@@ -12,7 +13,10 @@ export default function DialogFooter({
 }: IDialogFooterProps) {
     return (
         <div
-            className={`${className} flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2`}
+            className={clsx(
+                className,
+                'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2',
+            )}
             {...props}>
             {children}
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 
 interface TabPanelProps {
     className?: string;
@@ -11,7 +12,7 @@ export default function TabPanel({
     ...props
 }: TabPanelProps) {
     return (
-        <div className={`${className} w-full mt-4`} {...props}>
+        <div className={clsx(className, 'w-full mt-4')} {...props}>
             {children}
         </div>
     );

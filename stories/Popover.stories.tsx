@@ -27,9 +27,7 @@ export function Primary() {
     return (
         <Popover>
             <PopoverTrigger onClick={togglePopover}>
-                <Button type="button" variant="outline">
-                    Open popover
-                </Button>
+                <Button variant="primary">Open popover</Button>
             </PopoverTrigger>
             {isOpen && (
                 <PopoverContent>

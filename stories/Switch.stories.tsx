@@ -23,17 +23,16 @@ export function SwitchForm() {
     return (
         <form className="w-full space-y-6">
             <div>
-                <h3 className="mb-4 text-lg font-medium">
+                <h3 className="text-lg font-medium text-black dark:text-white">
                     Email Notifications
                 </h3>
-                <div className="space-y-4">
+                <div className="flex flex-col gap-2 mt-2">
                     <div className="flex flex-row items-center justify-between rounded-lg border p-4">
                         <div className="flex flex-col gap-2 space-y-0.5">
                             <Label className="text-base">
                                 Marketing emails
                             </Label>
-                            <Label
-                                style={{ color: '#1c1c1c', fontWeight: '400' }}>
+                            <Label>
                                 Receive emails about new products, features, and
                                 more.
                             </Label>
@@ -45,8 +44,7 @@ export function SwitchForm() {
                     <div className="flex flex-row items-center justify-between rounded-lg border p-4">
                         <div className="flex flex-col gap-2 space-y-0.5">
                             <Label className="text-base">Security emails</Label>
-                            <Label
-                                style={{ color: '#1c1c1c', fontWeight: '400' }}>
+                            <Label>
                                 Receive emails about your account security.
                             </Label>
                         </div>

@@ -1,32 +1,24 @@
 import React, { forwardRef, Ref, TextareaHTMLAttributes } from 'react';
+import clsx from 'clsx';
 
 interface ITextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     className?: string;
-    messages?: string | string[];
 }
 
 const Textarea = forwardRef(
     (
-        { className, messages = [], ...props }: ITextareaProps,
+        { className, ...props }: ITextareaProps,
         ref: Ref<HTMLTextAreaElement>,
     ) => (
         <div>
             <textarea
                 ref={ref}
                 {...props}
-                className={`${className} w-full transition placeholder:transition focus:ring-transparent file:border-0 file:text-sm file:font-medium rounded-lg p-2.5 caret-[#2b2b36] dark:caret-[#f2f7ff] border-[#d0d7e6] hover:border-[#2b2b36] dark:hover:border-[#2b2b36] hover:placeholder:text-[#6e7781] dark:hover:placeholder:text-[#8b99a6] bg-white dark:bg-[#1c1c1c] text-[#2b2b36] dark:text-[#e9f0ff] focus:border-[#2b2b36] dark:focus:border-[#2b2b36] focus:placeholder:text-[#6e7781] dark:focus:placeholder:text-[#8b99a6] file:text-[#1c1c1c] disabled:cursor-not-allowed disabled:opacity-50`}
+                className={clsx(
+                    className,
+                    'w-full transition placeholder:transition focus:ring-transparent file:border-0 file:text-sm file:font-medium rounded-lg p-2.5 caret-[#0c6ba8] hover:border-[#18181b] dark:hover:border-[#d4d4d8] hover:placeholder:text-[#18181b] dark:hover:placeholder:text-[#d4d4d8] bg-white dark:bg-black text-[#18181b] dark:text-[#d4d4d8] focus:border-[#18181b] dark:focus:border-[#d4d4d8] focus:placeholder:text-[#18181b] dark:focus:placeholder:text-[#d4d4d8] file:text-[#1c1c1c] disabled:cursor-not-allowed disabled:opacity-50',
+                )}
             />
-            {messages.length > 0 && Array.isArray(messages) ? (
-                <>
-                    {messages.map((message, index) => (
-                        <p className="text-sm text-[#f43f5e]" key={index}>
-                            {message}
-                        </p>
-                    ))}
-                </>
-            ) : (
-                <p className="text-sm text-[#f43f5e]">{messages}</p>
-            )}
         </div>
     ),
 );

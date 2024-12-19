@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import type { Meta } from '@storybook/react';
-import Button from '../src/button/Button';
 import {
+    Button,
     Drawer,
     DrawerContent,
     DrawerDescription,
     DrawerFooter,
     DrawerHeader,
+    DrawerTitle,
 } from '../src';
-import DrawerTitle from '../src/drawer/DrawerTitle';
 
 const meta: Meta<typeof Drawer> = {
     title: 'Components/Drawer',
@@ -35,7 +35,7 @@ export function Primary() {
 
     return (
         <>
-            <Button onClick={() => setIsOpen(true)} type={'button'}>
+            <Button onClick={() => setIsOpen(true)} variant="primary">
                 Open Drawer
             </Button>
             {isOpen && (
@@ -48,10 +48,8 @@ export function Primary() {
                             </DrawerDescription>
                         </DrawerHeader>
                         <DrawerFooter>
-                            <Button type="submit">Submit</Button>
-                            <Button type="button" variant="outline">
-                                Cancel
-                            </Button>
+                            <Button>Submit</Button>
+                            <Button variant="destructive">Cancel</Button>
                         </DrawerFooter>
                     </DrawerContent>
                 </Drawer>

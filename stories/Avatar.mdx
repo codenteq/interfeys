@@ -1,0 +1,33 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as AvatarStories from './Avatar.stories';
+
+<Meta of={AvatarStories} />
+
+# Avatar
+
+An image element with a fallback for representing the user.
+
+<Canvas of={AvatarStories.Secondary} />
+
+## Installation
+
+```bash
+npm i @codenteq/interfeys
+```
+
+In order for the styles to be applied correctly, you will need to ensure that the path to @codenteq is included in the content field of your `tailwind.config.ts`.
+```typescript
+'./node_modules/@codenteq/**/*.{js,ts,jsx,tsx}'
+```
+
+## Usage
+
+```typescript
+import { Avatar } from '@codenteq/interfeys';
+```
+
+```typescript
+<Avatar fallback="CT" />
+<Avatar src="https://github.com/codenteq.png" />
+```

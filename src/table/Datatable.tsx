@@ -1,16 +1,23 @@
-import React, { ChangeEvent, ReactNode } from 'react';
+import React, { ChangeEvent, Fragment, ReactNode } from 'react';
 import Input from '../input/Input';
-import { useTable, usePagination, Column } from 'react-table';
-import Pagination from './Pagination';
+import {
+    useReactTable,
+    getCoreRowModel,
+    getPaginationRowModel,
+    ColumnDef,
+    flexRender,
+} from '@tanstack/react-table';
 import { IBasePaginate } from './IPaginate';
+import { Pagination } from '../index';
 
 interface DataRow {
     [key: string]: any;
 }
 
 interface IDatatableProps {
-    columns: Column<DataRow>[];
     data: DataRow[];
+    columns: ColumnDef<DataRow, any>[];
+    renderSubComponent?: (props: { row: DataRow }) => React.ReactElement;
     pagePaginate: number;
     setPagePaginate: (page: number) => void;
     meta: IBasePaginate;
@@ -20,8 +27,9 @@ interface IDatatableProps {
 }
 
 export default function Datatable({
-    columns,
     data,
+    columns,
+    renderSubComponent,
     pagePaginate,
     setPagePaginate,
     meta,
@@ -29,15 +37,14 @@ export default function Datatable({
     setSearch,
     tableTopRightHeader,
 }: IDatatableProps): ReactNode {
-    const {
-        getTableProps,
-        getTableBodyProps,
-        headerGroups,
-        page,
-        nextPage,
-        previousPage,
-        prepareRow,
-    } = useTable({ columns, data }, usePagination) as any;
+    const table = useReactTable({
+        columns,
+        data,
+        getCoreRowModel: getCoreRowModel(),
+        getPaginationRowModel: getPaginationRowModel(),
+        manualPagination: true,
+        pageCount: meta.total,
+    });
 
     const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.value.length > 2) {
@@ -69,33 +76,34 @@ export default function Datatable({
                 </div>
 
                 <div className="overflow-x-auto">
-                    <table
-                        className="w-full text-left table-auto"
-                        {...getTableProps}>
+                    <table className="w-full text-left table-auto">
                         <thead className="text-xs text-zinc-700 uppercase bg-zinc-50 dark:bg-zinc-900 dark:text-zinc-500">
-                            {headerGroups.map(
-                                (headerGroup: any, key: number) => (
-                                    <tr
-                                        {...headerGroup.getHeaderGroupProps()}
-                                        key={key}>
-                                        {headerGroup.headers.map(
-                                            (column: any, key: number) => (
-                                                <th
-                                                    className="px-4 py-3"
-                                                    {...column.getHeaderProps()}
-                                                    key={key}>
-                                                    {column.render('Header')}
-                                                </th>
-                                            ),
-                                        )}
-                                    </tr>
-                                ),
-                            )}
+                            {table.getHeaderGroups().map(headerGroup => (
+                                <tr key={headerGroup.id}>
+                                    {headerGroup.headers.map(header => {
+                                        return (
+                                            <th
+                                                className="px-4 py-3"
+                                                key={header.id}
+                                                colSpan={header.colSpan}>
+                                                {header.isPlaceholder ? null : (
+                                                    <div>
+                                                        {flexRender(
+                                                            header.column
+                                                                .columnDef
+                                                                .header,
+                                                            header.getContext(),
+                                                        )}
+                                                    </div>
+                                                )}
+                                            </th>
+                                        );
+                                    })}
+                                </tr>
+                            ))}
                         </thead>
 
-                        <tbody
-                            className="text-zinc-900 dark:text-zinc-300"
-                            {...getTableBodyProps()}>
+                        <tbody className="text-zinc-900 dark:text-zinc-300">
                             {isLoading ? (
                                 <tr>
                                     {Array(columns.length)
@@ -115,25 +123,46 @@ export default function Datatable({
                                             </td>
                                         ))}
                                 </tr>
-                            ) : page.length > 0 ? (
-                                page.map((row: any, key: number) => {
-                                    prepareRow(row);
+                            ) : table.getRowModel().rows.length > 0 ? (
+                                table.getRowModel().rows.map((row: any) => {
                                     return (
-                                        <tr
-                                            key={key}
-                                            className="border-b border-zinc-50 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800 h-16"
-                                            {...row.getRowProps()}>
-                                            {row.cells.map(
-                                                (cell: any, key: number) => (
-                                                    <td
-                                                        key={key}
-                                                        className="p-4 text-base font-medium whitespace-nowrap dark:text-zinc-400"
-                                                        {...cell.getCellProps()}>
-                                                        {cell.render('Cell')}
-                                                    </td>
-                                                ),
-                                            )}
-                                        </tr>
+                                        <Fragment key={row.id}>
+                                            <tr className="border-b border-zinc-50 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800 h-16">
+                                                {row
+                                                    .getVisibleCells()
+                                                    .map((cell: any) => {
+                                                        return (
+                                                            <td
+                                                                key={cell.id}
+                                                                className="p-4 text-base font-medium whitespace-nowrap dark:text-zinc-400">
+                                                                {flexRender(
+                                                                    cell.column
+                                                                        .columnDef
+                                                                        .cell,
+                                                                    cell.getContext(),
+                                                                )}
+                                                            </td>
+                                                        );
+                                                    })}
+                                            </tr>
+                                            {row.getIsExpanded() &&
+                                                renderSubComponent && (
+                                                    <tr className="border-b border-zinc-50 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800 h-16">
+                                                        <td
+                                                            className="p-4 text-base font-medium whitespace-nowrap dark:text-zinc-400"
+                                                            colSpan={
+                                                                row.getVisibleCells()
+                                                                    .length
+                                                            }>
+                                                            {renderSubComponent(
+                                                                {
+                                                                    row,
+                                                                },
+                                                            )}
+                                                        </td>
+                                                    </tr>
+                                                )}
+                                        </Fragment>
                                     );
                                 })
                             ) : (
@@ -148,8 +177,8 @@ export default function Datatable({
                 </div>
                 <Pagination
                     meta={meta}
-                    previousPage={previousPage}
-                    nextPage={nextPage}
+                    previousPage={table.previousPage}
+                    nextPage={table.nextPage}
                     pagePaginate={pagePaginate}
                     setPagePaginate={setPagePaginate}
                 />

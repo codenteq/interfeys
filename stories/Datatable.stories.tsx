@@ -29,7 +29,7 @@ export function Primary() {
     const meta = {
         current_page: 1,
         last_page: 1,
-        total: 2,
+        total: data.length,
         links: [
             {
                 url: null,
@@ -38,19 +38,27 @@ export function Primary() {
             },
         ],
         from: 1,
-        to: 2,
+        to: data.length,
     };
 
     const columns = [
         {
-            Header: 'Full Name',
-            accessor: 'full_name',
+            accessorKey: 'id',
+            header: 'Id',
+            footer: 'id',
         },
         {
-            Header: 'Email',
-            accessor: 'email',
+            accessorKey: 'full_name',
+            header: 'Name',
+            footer: 'id',
+        },
+        {
+            accessorKey: 'email',
+            header: 'Is Everyone',
+            footer: 'id',
         },
     ];
+
     return (
         <>
             <Datatable

@@ -6,7 +6,7 @@ import clsx from 'clsx';
 interface IDialogContentProps extends React.HTMLProps<HTMLDivElement> {
     className?: string;
     children: React.ReactNode;
-    onClose: () => void;
+    onClose?: () => void;
 }
 
 export default function DialogContent({
@@ -19,7 +19,7 @@ export default function DialogContent({
 
     useEffect(() => {
         const handleKeyPress = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') {
+            if (e.key === 'Escape' && onClose) {
                 onClose();
             }
         };
@@ -29,13 +29,14 @@ export default function DialogContent({
         return () => {
             window.removeEventListener('keydown', handleKeyPress);
         };
-    }, []);
+    }, [onClose]);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (
                 dialogRef.current &&
-                !dialogRef.current.contains(event.target as Node)
+                !dialogRef.current.contains(event.target as Node) &&
+                onClose
             ) {
                 onClose();
             }
@@ -46,6 +47,7 @@ export default function DialogContent({
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [onClose]);
+
     return (
         <motion.div
             initial={{ opacity: 0, scale: 1, x: 0, y: 0 }}

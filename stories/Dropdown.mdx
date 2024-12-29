@@ -1,0 +1,50 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as DropdownStories from './Dropdown.stories';
+
+<Meta of={DropdownStories} />
+
+# Dropdown Menu
+
+Displays a menu to the user — such as a set of actions or functions — triggered by a button.
+
+<Canvas of={DropdownStories.Primary} />
+
+## Installation
+
+```bash
+npm i @codenteq/interfeys
+```
+
+In order for the styles to be applied correctly, you will need to ensure that the path to @codenteq is included in the content field of your `tailwind.config.ts`.
+```typescript
+'./node_modules/@codenteq/**/*.{js,ts,jsx,tsx}'
+```
+
+## Usage
+
+```typescript
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@codenteq/interfeys"
+
+```
+
+```typescript
+<DropdownMenu>
+  <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuItem>Billing</DropdownMenuItem>
+    <DropdownMenuItem>Team</DropdownMenuItem>
+    <DropdownMenuItem>Subscription</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```

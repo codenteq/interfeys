@@ -56,6 +56,7 @@ export { default as Popover } from './popover/Popover';
 export { default as PopoverContent } from './popover/PopoverContent';
 export { default as PopoverTrigger } from './popover/PopoverTrigger';
 export { default as Select } from './select/Select';
+export { default as Skeleton } from './skeleton/Skeleton';
 export { default as Switch } from './switch/Switch';
 export { default as TabGroup } from './tab-group/TabGroup';
 export { default as TabList } from './tab-group/TabList';

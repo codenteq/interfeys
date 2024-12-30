@@ -1,0 +1,70 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as BreadcrumbStories from './Breadcrumb.stories';
+
+<Meta of={BreadcrumbStories} />
+
+# Breadcrumb
+
+Displays the path to the current resource using a hierarchy of links.
+
+<Canvas of={BreadcrumbStories.Primary} />
+
+## Installation
+
+```bash
+npm i @codenteq/interfeys
+```
+
+In order for the styles to be applied correctly, you will need to ensure that the path to @codenteq is included in the content field of your `tailwind.config.ts`.
+```typescript
+'./node_modules/@codenteq/**/*.{js,ts,jsx,tsx}'
+```
+
+## Usage
+
+```typescript
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@codenteq/interfeys"
+```
+
+```typescript
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/components">Components</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
+```
+
+## Examples
+
+### Custom separator
+Use a custom component as children for `<BreadcrumbSeparator />` to create a custom separator.
+
+<Canvas of={BreadcrumbStories.CustomSeparator} />
+
+### Collapsed
+We provide a `<BreadcrumbEllipsis />` component to show a collapsed state when the breadcrumb is too long.
+
+<Canvas of={BreadcrumbStories.Collapsed} />
+
+### Link component
+To use a custom link component from your routing library, you can use the `asChild` prop on `<BreadcrumbLink />`.
+
+<Canvas of={BreadcrumbStories.LinkComponent} />

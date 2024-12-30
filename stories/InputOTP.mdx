@@ -1,0 +1,70 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as InputOTPStories from './InputOTP.stories';
+
+<Meta of={InputOTPStories} />
+
+# Input OTP
+
+Accessible one-time password component with copy paste functionality.
+
+<Canvas of={InputOTPStories.Primary} />
+
+## About
+
+Input OTP is built on top of [input-otp](https://github.com/guilhermerodz/input-otp)
+
+## Installation
+
+```bash
+npm i @codenteq/interfeys
+```
+
+In order for the styles to be applied correctly, you will need to ensure that the path to @codenteq is included in the content field of your `tailwind.config.ts`.
+```typescript
+'./node_modules/@codenteq/**/*.{js,ts,jsx,tsx}'
+```
+
+## Usage
+
+```typescript
+import {
+    InputOTP,
+    InputOTPGroup,
+    InputOTPSeparator,
+    InputOTPSlot,
+} from '@codenteq/interfeys';
+```
+
+```typescript
+<InputOTP maxLength={6}>
+  <InputOTPGroup>
+    <InputOTPSlot index={0} />
+    <InputOTPSlot index={1} />
+    <InputOTPSlot index={2} />
+  </InputOTPGroup>
+  <InputOTPSeparator />
+  <InputOTPGroup>
+    <InputOTPSlot index={3} />
+    <InputOTPSlot index={4} />
+    <InputOTPSlot index={5} />
+  </InputOTPGroup>
+</InputOTP>
+```
+
+## Examples
+
+### Pattern
+Use the `pattern` prop to define a custom pattern for the OTP input.
+
+<Canvas of={InputOTPStories.Pattern} />
+
+### Separator
+You can use the `<InputOTPSeparator />` component to add a separator between the input groups.
+
+<Canvas of={InputOTPStories.Separator} />
+
+### Controlled
+You can use the `value` and `onChange` props to control the input value.
+
+<Canvas of={InputOTPStories.Controlled} />
